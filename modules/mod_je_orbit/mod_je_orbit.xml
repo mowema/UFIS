@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="module" client="site">
+	<name>JE Orbit SlideShow</name> 
+	<author>jExtensions.com</author> 
+	<creationDate>2012 September</creationDate> 
+	<copyright>jExtensions.com</copyright> 
+	<license>This extension in released under the GNU/GPL License - http://www.gnu.org/copyleft/gpl.html</license> 
+	<authorEmail>support@jExtensions.com</authorEmail> 
+	<authorUrl>http://jExtensions.com</authorUrl> 
+	<version>2.5.0</version> 
+	<description>
+	<![CDATA[
+	<h1>JE Orbit - jQuery SlideShow Module</h1>
+	<div style="margin:0 0 0 10px; font-size:15px;">Download more free extensions at <a href="http://jextensions.com" target="_blank">jExtensions.com</a>;
+	<br/><br/>Get support for this Joomla module on the official <a href="http://jextensions.com/orbit-jquery-slideshow-for-joomla-2.5/" target="_blank">jQuery Slideshow Module</a> page.</div><br/>
+	<div style="margin:0 0 0 10px; font-size:11px;">Credits: <a href="http://www.zurb.com/playground/jquery_image_slider_plugin" target="_blank" >Orbit</a></div>
+	<br/>
+		]]>
+	</description>
+	
+	<files>
+		<filename module="mod_je_orbit">mod_je_orbit.php</filename>
+		<filename>index.html</filename>
+		<folder>css/</folder>
+		<folder>images/</folder>
+		<folder>js/</folder>
+	</files>
+
+	<config>
+		<fields name="params">
+		<fieldset name="basic">
+			<field name="jQuery" type="list" default="1" label="jQuery" description="Enable or disable jQuery plugin on this module.">
+				<option value="1">jQuery 1.5.1 (Load localy)</option>
+				<option value="2">jQuery Latest Version</option>
+				<option value="3">Disable jQuery Plugin</option>
+			</field>
+
+			<field name="imgWidth" type="text" default="940" label="Image Width" description="Width of slideshow image in pixels." />
+			<field name="imgHeight" type="text" default="300" label="Image Height" description="Height of slideshow image in pixels." />		
+			
+			<field type="spacer" name="&lt;div style=&quot;color:#444; background:#D5EEFF; border:1px solid #a4cde9; font-size:15px; font-weight:bold; padding:3px; margin:0;&quot;&gt;Slideshow Setup&lt;/div&gt;" />
+			<field name="Animation" type="list" default="fade" label="Animation" description="">
+				<option value="fade">Fade</option>
+				<option value="horizontal-slide">Horizontal Slide</option>
+				<option value="vertical-slide">Vertical Slide</option>
+				<option value="horizontal-push">Vertical Push</option>
+			</field>
+			<field name="AnimationSpeed" type="text" default="600" label="Animation Speed" description="How fast animtions are." />
+			<field name="Timer" type="list" default="true" label="Timer" description="">
+				<option value="true">Show Timer</option>
+				<option value="false">Hide Timer</option>
+			</field>
+			<field name="AdvanceSpeed" type="text" default="4000" label="Advance Speed" description="If timer is enabled, time between transitions." />	
+			<field name="pauseOnHover" type="list" default="false" label="Pause on Hover" description="Pause slideshow on mouse-over.">
+				<option value="true">Yes</option>
+				<option value="false">No</option>
+			</field>	
+			<field name="startClockOnMouseOut" type="list" default="false" label="Start clock on mouse-out" description="">
+				<option value="true">Yes</option>
+				<option value="false">No</option>
+			</field>			
+			<field name="startClockOnMouseOutAfter" type="text" default="1" label="Start Clock After" description="Start clock on mouse-out after X seconds." />
+			<field name="directionalNav" type="list" default="true" label="Direction Arrows" description="">
+				<option value="true">Show</option>
+				<option value="false">Hide</option>
+			</field>	
+			<field name="bullets" type="list" default="true" label="Navigation Bullets" description="">
+				<option value="true">Show</option>
+				<option value="false">Hide</option>
+			</field>
+			<field name="linktarget" type="list" default="_self" label="Link Target" description="">
+				<option value="_self">Same Window</option>
+				<option value="_blank">New Window</option>
+			</field>			
+		</fieldset>
+			
+		<fieldset name="slide_1" label="Slide 1">
+			<field name="Image1" type="media" label="Image Path" description="Choose an image." />
+			<field name="Link1" type="text" default="" label="Link" description="Insert URL where you want to link the image." />
+			<field name="Text1" type="list" default="1" label="Text Type" description="Choose to display image caption or content.">
+				<option value="caption">Caption</option>
+				<option value="content">Content</option>
+			</field>			
+			<field name="Caption1" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="Caption / Content" description="Add caption or content. HTML tags are supported." />
+									
+		</fieldset>
+		
+		<fieldset name="slide_2" label="Slide 2">
+			<field name="Image2" type="media" label="Image Path" description="Choose an image." />
+			<field name="Link2" type="text" default="" label="Link" description="Insert URL where you want to link the image." />
+			<field name="Text2" type="list" default="1" label="Text Type" description="Choose to display image caption or content.">
+				<option value="caption">Caption</option>
+				<option value="content">Content</option>
+			</field>			
+			<field name="Caption2" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="Caption / Content" description="Add caption or content. HTML tags are supported." />						
+		</fieldset>
+		
+		<fieldset name="slide_3" label="Slide 3">
+			<field name="Image3" type="media" label="Image Path" description="Choose an image." />
+			<field name="Link3" type="text" default="" label="Link" description="Insert URL where you want to link the image." />
+			<field name="Text3" type="list" default="1" label="Text Type" description="Choose to display image caption or content.">
+				<option value="caption">Caption</option>
+				<option value="content">Content</option>
+			</field>			
+			<field name="Caption3" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="Caption / Content" description="Add caption or content. HTML tags are supported." />						
+		</fieldset>
+		
+		<fieldset name="slide_4" label="Slide 4">
+			<field name="Image4" type="media" label="Image Path" description="Choose an image." />
+			<field name="Link4" type="text" default="" label="Link" description="Insert URL where you want to link the image." />
+			<field name="Text4" type="list" default="1" label="Text Type" description="Choose to display image caption or content.">
+				<option value="caption">Caption</option>
+				<option value="content">Content</option>
+			</field>			
+			<field name="Caption4" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="Caption / Content" description="Add caption or content. HTML tags are supported." />						
+		</fieldset>
+		
+		<fieldset name="slide_5" label="Slide 5">
+			<field name="Image5" type="media" label="Image Path" description="Choose an image." />
+			<field name="Link5" type="text" default="" label="Link" description="Insert URL where you want to link the image." />
+			<field name="Text5" type="list" default="1" label="Text Type" description="Choose to display image caption or content.">
+				<option value="caption">Caption</option>
+				<option value="content">Content</option>
+			</field>			
+			<field name="Caption5" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="Caption / Content" description="Add caption or content. HTML tags are supported." />						
+		</fieldset>
+		
+		<fieldset name="slide_6" label="Slide 6">
+			<field name="Image6" type="media" label="Image Path" description="Choose an image." />
+			<field name="Link6" type="text" default="" label="Link" description="Insert URL where you want to link the image." />
+			<field name="Text6" type="list" default="1" label="Text Type" description="Choose to display image caption or content.">
+				<option value="caption">Caption</option>
+				<option value="content">Content</option>
+			</field>			
+			<field name="Caption6" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="Caption / Content" description="Add caption or content. HTML tags are supported." />						
+		</fieldset>	
+		
+		<fieldset name="slide_7" label="Slide 7">
+			<field name="Image7" type="media" label="Image Path" description="Choose an image." />
+			<field name="Link7" type="text" default="" label="Link" description="Insert URL where you want to link the image." />
+			<field name="Text7" type="list" default="1" label="Text Type" description="Choose to display image caption or content.">
+				<option value="caption">Caption</option>
+				<option value="content">Content</option>
+			</field>			
+			<field name="Caption7" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="Caption / Content" description="Add caption or content. HTML tags are supported." />						
+		</fieldset>			
+		
+		<fieldset name="slide_8" label="Slide 8">
+			<field name="Image8" type="media" label="Image Path" description="Choose an image." />
+			<field name="Link8" type="text" default="" label="Link" description="Insert URL where you want to link the image." />
+			<field name="Text8" type="list" default="1" label="Text Type" description="Choose to display image caption or content.">
+				<option value="caption">Caption</option>
+				<option value="content">Content</option>
+			</field>			
+			<field name="Caption8" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="Caption / Content" description="Add caption or content. HTML tags are supported." />						
+		</fieldset>
+		
+		<fieldset name="slide_9" label="Slide 9">
+			<field name="Image9" type="media" label="Image Path" description="Choose an image." />
+			<field name="Link9" type="text" default="" label="Link" description="Insert URL where you want to link the image." />
+			<field name="Text9" type="list" default="1" label="Text Type" description="Choose to display image caption or content.">
+				<option value="caption">Caption</option>
+				<option value="content">Content</option>
+			</field>			
+			<field name="Caption9" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="Caption / Content" description="Add caption or content. HTML tags are supported." />						
+		</fieldset>
+		
+		<fieldset name="slide_10" label="Slide 10">
+			<field name="Image10" type="media" label="Image Path" description="Choose an image." />
+			<field name="Link10" type="text" default="" label="Link" description="Insert URL where you want to link the image." />
+			<field name="Text10" type="list" default="1" label="Text Type" description="Choose to display image caption or content.">
+				<option value="caption">Caption</option>
+				<option value="content">Content</option>
+			</field>			
+			<field name="Caption10" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="Caption / Content" description="Add caption or content. HTML tags are supported." />						
+		</fieldset>	
+		
+		<fieldset name="slide_11" label="Slide 11">
+			<field name="Image11" type="media" label="Image Path" description="Choose an image." />
+			<field name="Link11" type="text" default="" label="Link" description="Insert URL where you want to link the image." />
+			<field name="Text11" type="list" default="1" label="Text Type" description="Choose to display image caption or content.">
+				<option value="caption">Caption</option>
+				<option value="content">Content</option>
+			</field>			
+			<field name="Caption12" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="Caption / Content" description="Add caption or content. HTML tags are supported." />						
+		</fieldset>
+		
+		<fieldset name="slide_12" label="Slide 12">
+			<field name="Image12" type="media" label="Image Path" description="Choose an image." />
+			<field name="Link12" type="text" default="" label="Link" description="Insert URL where you want to link the image." />
+			<field name="Text12" type="list" default="1" label="Text Type" description="Choose to display image caption or content.">
+				<option value="caption">Caption</option>
+				<option value="content">Content</option>
+			</field>			
+			<field name="Caption12" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="Caption / Content" description="Add caption or content. HTML tags are supported." />						
+		</fieldset>	
+		
+		<fieldset name="slide_13" label="Slide 13">
+			<field name="Image13" type="media" label="Image Path" description="Choose an image." />
+			<field name="Link13" type="text" default="" label="Link" description="Insert URL where you want to link the image." />
+			<field name="Text13" type="list" default="1" label="Text Type" description="Choose to display image caption or content.">
+				<option value="caption">Caption</option>
+				<option value="content">Content</option>
+			</field>			
+			<field name="Caption13" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="Caption / Content" description="Add caption or content. HTML tags are supported." />						
+		</fieldset>	
+		
+		<fieldset name="slide_14" label="Slide 14">
+			<field name="Image14" type="media" label="Image Path" description="Choose an image." />
+			<field name="Link14" type="text" default="" label="Link" description="Insert URL where you want to link the image." />
+			<field name="Text14" type="list" default="1" label="Text Type" description="Choose to display image caption or content.">
+				<option value="caption">Caption</option>
+				<option value="content">Content</option>
+			</field>			
+			<field name="Caption14" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="Caption / Content" description="Add caption or content. HTML tags are supported." />						
+		</fieldset>	
+		
+		<fieldset name="slide_15" label="Slide 15">
+			<field name="Image15" type="media" label="Image Path" description="Choose an image." />
+			<field name="Link15" type="text" default="" label="Link" description="Insert URL where you want to link the image." />
+			<field name="Text15" type="list" default="1" label="Text Type" description="Choose to display image caption or content.">
+				<option value="caption">Caption</option>
+				<option value="content">Content</option>
+			</field>			
+			<field name="Caption15" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="Caption / Content" description="Add caption or content. HTML tags are supported." />						
+		</fieldset>	
+		
+		<fieldset name="slide_16" label="Slide 16">
+			<field name="Image16" type="media" label="Image Path" description="Choose an image." />
+			<field name="Link16" type="text" default="" label="Link" description="Insert URL where you want to link the image." />
+			<field name="Text16" type="list" default="1" label="Text Type" description="Choose to display image caption or content.">
+				<option value="caption">Caption</option>
+				<option value="content">Content</option>
+			</field>			
+			<field name="Caption16" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="Caption / Content" description="Add caption or content. HTML tags are supported." />						
+		</fieldset>	
+		
+		<fieldset name="slide_17" label="Slide 17">
+			<field name="Image17" type="media" label="Image Path" description="Choose an image." />
+			<field name="Link17" type="text" default="" label="Link" description="Insert URL where you want to link the image." />
+			<field name="Text17" type="list" default="1" label="Text Type" description="Choose to display image caption or content.">
+				<option value="caption">Caption</option>
+				<option value="content">Content</option>
+			</field>			
+			<field name="Caption17" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="Caption / Content" description="Add caption or content. HTML tags are supported." />						
+		</fieldset>
+		
+		<fieldset name="slide_18" label="Slide 18">
+			<field name="Image18" type="media" label="Image Path" description="Choose an image." />
+			<field name="Link18" type="text" default="" label="Link" description="Insert URL where you want to link the image." />
+			<field name="Text18" type="list" default="1" label="Text Type" description="Choose to display image caption or content.">
+				<option value="caption">Caption</option>
+				<option value="content">Content</option>
+			</field>			
+			<field name="Caption18" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="Caption / Content" description="Add caption or content. HTML tags are supported." />						
+		</fieldset>	
+		
+		<fieldset name="slide_19" label="Slide 19">
+			<field name="Image19" type="media" label="Image Path" description="Choose an image." />
+			<field name="Link19" type="text" default="" label="Link" description="Insert URL where you want to link the image." />
+			<field name="Text19" type="list" default="1" label="Text Type" description="Choose to display image caption or content.">
+				<option value="caption">Caption</option>
+				<option value="content">Content</option>
+			</field>			
+			<field name="Caption19" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="Caption / Content" description="Add caption or content. HTML tags are supported." />						
+		</fieldset>
+
+		<fieldset name="slide_20" label="Slide 20">
+			<field name="Image20" type="media" label="Image Path" description="Choose an image." />
+			<field name="Link20" type="text" default="" label="Link" description="Insert URL where you want to link the image." />
+			<field name="Text20" type="list" default="1" label="Text Type" description="Choose to display image caption or content.">
+				<option value="caption">Caption</option>
+				<option value="content">Content</option>
+			</field>			
+			<field name="Caption20" type="textarea" filter="safehtml" cols="60" rows="5" default="" label="Caption / Content" description="Add caption or content. HTML tags are supported." />						
+		</fieldset>						
+	</fields>
+	</config>
+</extension>
