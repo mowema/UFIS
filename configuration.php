@@ -13,9 +13,9 @@ class JConfig {
 	public $debug_lang = '0';
 	public $dbtype = 'mysql';
 	public $host = 'localhost';
-	public $user = 'wwwos_joo';
-	public $password = 'password';
-	public $db = 'wwwos_joo';
+	public $user = 'ufis';
+	public $password = 'xyz';
+	public $db = 'ufis';
 	public $dbprefix = 'j_';
 	public $live_site = '';
 	public $secret = '7haUBUYGFnCJzAOv';
@@ -53,8 +53,8 @@ class JConfig {
 	public $sef_suffix = '0';
 	public $unicodeslugs = '0';
 	public $feed_limit = '10';
-	public $log_path = '/www/ufis/logs';
-	public $tmp_path = '/www/ufis/tmp';
+	public $log_path = '/www/UFIS/logs';
+	public $tmp_path = '/www/UFIS/tmp';
 	public $lifetime = '15';
 	public $session_handler = 'database';
 	public $MetaRights = '';

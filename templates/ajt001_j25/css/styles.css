@@ -304,26 +304,32 @@ ul.pagenav { display:block;} ul.pagenav li { list-style:none;}
 #sidebar .module ul.menu li ul li.active a,
 #sidebar .module ul.menu li.active ul li a:hover,
 #sidebar .module ul.menu li ul li.active ul li.active a { background:url('../images/sidebar-li2.png') 6px 10px no-repeat;  text-decoration:none;}
-#sidebar .module ul.menu li.active {}
+
 /* Sidebar SubMenu*/
 #sidebar .module ul.menu li ul {margin:0; background:url('../images/sidebar-menu-sep.png') top left no-repeat}
 #sidebar .module ul.menu li ul li {background:none;  margin: 0 0 0 10px;   }
 #sidebar .module ul.menu li ul li.last,#sidebar .module ul.menu li.active ul li.last { background:none }
 #sidebar .module ul.menu li ul li a{ }
 #sidebar .module ul.menu li ul li a:hover{ border: 0;}
-#sidebar .module ul.menu li ul li.active, #sidebar .module ul.menu li.active ul li {  background:url('../images/sidebar-menu-sep.png') bottom left no-repeat}
+#sidebar .module ul.menu li ul li.active, 
+#sidebar .module ul.menu li.active ul li {  background:url('../images/sidebar-menu-sep.png') bottom left no-repeat}
 
-#sidebar .botonera ul.menu li{ list-style:none; margin:0; padding:0; background:none; color: #12A0A9;}
-#sidebar .botonera ul.menu li.current{ background-color:#F4F4F4}
-#sidebar .botonera ul.menu li:hover{ color:#CE205A; }
-#sidebar .botonera ul.menu li a,
-#sidebar .botonera ul.menu li.active ul li a,
-#sidebar .botonera ul.menu li ul li.active ul li a{display:block;margin:0; padding:5px 0 7px 20px; background:none; text-decoration:none;  font-family:'PT Sans',Arial, Helvetica, sans-serif; font-size:16px; line-height:20px; }
-#sidebar .botonera ul.menu li a:hover,#sidebar .module ul.menu li.active a,
-#sidebar .botonera ul.menu li ul li a:hover,
-#sidebar .botonera ul.menu li ul li.active a,
-#sidebar .botonera ul.menu li.active ul li a:hover,
-#sidebar .botonera ul.menu li ul li.active ul li.active a { 
+#sidebar .module.botonera ul.menu li{ 
+    list-style:none !important ; 
+    margin:0 0 20px 0; padding:0; 
+    background:none; 
+    color: #12A0A9;}
+#sidebar .module.botonera ul.menu li.current{ background-color:#F4F4F4}
+#sidebar .module.botonera ul.menu li:hover{ color:#CE205A; }
+#sidebar .module.botonera ul.menu li a,
+#sidebar .module.botonera ul.menu li ul li a,
+#sidebar .module.botonera ul.menu li ul li ul li a{display:block;margin:0; padding:5px 0 7px 20px; background:none; text-decoration:none;  font-family:'PT Sans',Arial, Helvetica, sans-serif; font-size:16px; line-height:20px; }
+#sidebar .module.botonera ul.menu li a:hover,
+#sidebar .module.botonera ul.menu li a,
+#sidebar .module.botonera ul.menu li ul li a:hover,
+#sidebar .module.botonera ul.menu li ul li a,
+#sidebar .module.botonera ul.menu li ul li a:hover,
+#sidebar .module.botonera ul.menu li ul li ul li a { 
     background: none repeat scroll 0 0 #F4F4F4;
     border: 2px solid #377695;
     font-size: 2em;
@@ -343,14 +349,19 @@ ul.pagenav { display:block;} ul.pagenav li { list-style:none;}
      -moz-background-clip: padding;
           background-clip: padding-box;
 }
-#sidebar .botonera ul.menu li.active {}
+#sidebar .module.botonera ul.menu  a:hover {
+        background: none repeat scroll 0 0 #DCE4E8 !important;
+}
+
 /* Sidebar SubMenu*/
-#sidebar .botonera ul.menu li ul {margin:0; background:none}
-#sidebar .botonera ul.menu li ul li {background:none;  margin: 0 0 0 10px;   }
-#sidebar .botonera ul.menu li ul li.last,#sidebar .module ul.menu li.active ul li.last { background:none }
-#sidebar .botonera ul.menu li ul li a{ }
-#sidebar .botonera ul.menu li ul li a:hover{ border: 0;}
-#sidebar .botonera ul.menu li ul li.active, #sidebar .module ul.menu li.active ul li {  background:none}
+#sidebar .module.botonera ul.menu li ul {margin:0; background:none}
+#sidebar .module.botonera ul.menu li ul li {background:none;  margin: 0 0 0 10px;   }
+#sidebar .module.botonera ul.menu li ul li.last,
+#sidebar .module.botonera ul.menu li ul li.last { background:none }
+#sidebar .module.botonera ul.menu li ul li a{ }
+#sidebar .module.botonera ul.menu li ul li a:hover{ border: 0;}
+#sidebar .module.botonera ul.menu li ul li.active, 
+#sidebar .module.botonera ul.menu li ul li {  background:none }
 
 /* User 1 - User 2 - User 3 - User 4*/
 #user1{padding:0; margin:0 auto 20px auto;clear:both;}

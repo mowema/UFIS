@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4
+-- version 3.3.3
 -- http://www.phpmyadmin.net
 --
--- Versión del servidor: 5.5.32-cll
--- Versión de PHP: 5.3.17
+-- Host: localhost
+-- Generation Time: Aug 15, 2013 at 09:59 AM
+-- Server version: 5.1.54
+-- PHP Version: 5.3.14
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -17,15 +16,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `ufis`
+-- Database: `ufis`
 --
-CREATE DATABASE IF NOT EXISTS `ufis` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `ufis`;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_assets`
+-- Table structure for table `j_assets`
 --
 
 CREATE TABLE IF NOT EXISTS `j_assets` (
@@ -44,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `j_assets` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=59 ;
 
 --
--- Volcado de datos para la tabla `j_assets`
+-- Dumping data for table `j_assets`
 --
 
 INSERT INTO `j_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `title`, `rules`) VALUES
@@ -109,7 +106,7 @@ INSERT INTO `j_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `title
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_associations`
+-- Table structure for table `j_associations`
 --
 
 CREATE TABLE IF NOT EXISTS `j_associations` (
@@ -120,10 +117,15 @@ CREATE TABLE IF NOT EXISTS `j_associations` (
   KEY `idx_key` (`key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `j_associations`
+--
+
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_attachments`
+-- Table structure for table `j_attachments`
 --
 
 CREATE TABLE IF NOT EXISTS `j_attachments` (
@@ -157,7 +159,7 @@ CREATE TABLE IF NOT EXISTS `j_attachments` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- Volcado de datos para la tabla `j_attachments`
+-- Dumping data for table `j_attachments`
 --
 
 INSERT INTO `j_attachments` (`id`, `filename`, `filename_sys`, `file_type`, `file_size`, `url`, `uri_type`, `url_valid`, `url_relative`, `url_verify`, `display_name`, `description`, `icon_filename`, `access`, `state`, `user_field_1`, `user_field_2`, `user_field_3`, `parent_type`, `parent_entity`, `parent_id`, `created`, `created_by`, `modified`, `modified_by`, `download_count`) VALUES
@@ -166,7 +168,7 @@ INSERT INTO `j_attachments` (`id`, `filename`, `filename_sys`, `file_type`, `fil
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_banners`
+-- Table structure for table `j_banners`
 --
 
 CREATE TABLE IF NOT EXISTS `j_banners` (
@@ -212,10 +214,15 @@ CREATE TABLE IF NOT EXISTS `j_banners` (
   KEY `idx_language` (`language`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Dumping data for table `j_banners`
+--
+
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_banner_clients`
+-- Table structure for table `j_banner_clients`
 --
 
 CREATE TABLE IF NOT EXISTS `j_banner_clients` (
@@ -238,10 +245,15 @@ CREATE TABLE IF NOT EXISTS `j_banner_clients` (
   KEY `idx_metakey_prefix` (`metakey_prefix`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Dumping data for table `j_banner_clients`
+--
+
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_banner_tracks`
+-- Table structure for table `j_banner_tracks`
 --
 
 CREATE TABLE IF NOT EXISTS `j_banner_tracks` (
@@ -255,10 +267,15 @@ CREATE TABLE IF NOT EXISTS `j_banner_tracks` (
   KEY `idx_banner_id` (`banner_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `j_banner_tracks`
+--
+
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_categories`
+-- Table structure for table `j_categories`
 --
 
 CREATE TABLE IF NOT EXISTS `j_categories` (
@@ -300,7 +317,7 @@ CREATE TABLE IF NOT EXISTS `j_categories` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
 
 --
--- Volcado de datos para la tabla `j_categories`
+-- Dumping data for table `j_categories`
 --
 
 INSERT INTO `j_categories` (`id`, `asset_id`, `parent_id`, `lft`, `rgt`, `level`, `path`, `extension`, `title`, `alias`, `note`, `description`, `published`, `checked_out`, `checked_out_time`, `access`, `params`, `metadesc`, `metakey`, `metadata`, `created_user_id`, `created_time`, `modified_user_id`, `modified_time`, `hits`, `language`, `version`) VALUES
@@ -312,7 +329,7 @@ INSERT INTO `j_categories` (`id`, `asset_id`, `parent_id`, `lft`, `rgt`, `level`
 (6, 31, 1, 9, 10, 1, 'uncategorised', 'com_weblinks', 'Sin categoría', 'uncategorised', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"target":"","image":""}', '', '', '{"page_title":"","author":"","robots":""}', 572, '2011-01-01 00:00:01', 0, '0000-00-00 00:00:00', 0, '*', 1),
 (7, 32, 1, 11, 12, 1, 'uncategorised', 'com_users.notes', 'Sin categoría', 'uncategorised', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"target":"","image":""}', '', '', '{"page_title":"","author":"","robots":""}', 572, '2011-01-01 00:00:01', 0, '0000-00-00 00:00:00', 0, '*', 1),
 (8, 35, 1, 13, 14, 1, 'informacion-institucional', 'com_content', 'Información Institucional', 'informacion-institucional', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 572, '2013-06-13 16:51:04', 0, '0000-00-00 00:00:00', 42, '*', 1),
-(9, 38, 1, 41, 42, 1, 'publicaciones', 'com_content', 'Publicaciones - Documentación Técnica', 'publicaciones', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 572, '2013-06-13 16:52:46', 572, '2013-07-27 18:36:05', 22, '*', 1),
+(9, 38, 1, 41, 42, 1, 'publicaciones', 'com_content', 'Publicaciones - Documentación Técnica', 'publicaciones', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 572, '2013-06-13 16:52:46', 572, '2013-07-27 18:36:05', 25, '*', 1),
 (10, 40, 1, 15, 28, 1, 'procesos-de-compra', 'com_content', 'Procesos de Compra', 'procesos-de-compra', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 572, '2013-06-13 18:06:39', 572, '2013-06-13 18:07:14', 0, '*', 1),
 (11, 41, 10, 16, 17, 2, 'procesos-de-compra/bienes', 'com_content', 'Bienes', 'bienes', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 572, '2013-06-13 18:07:38', 0, '0000-00-00 00:00:00', 5, '*', 1),
 (12, 42, 10, 18, 19, 2, 'procesos-de-compra/obras', 'com_content', 'Obras', 'obras', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 572, '2013-06-13 18:07:49', 0, '0000-00-00 00:00:00', 0, '*', 1),
@@ -330,7 +347,7 @@ INSERT INTO `j_categories` (`id`, `asset_id`, `parent_id`, `lft`, `rgt`, `level`
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_chronoforms`
+-- Table structure for table `j_chronoforms`
 --
 
 CREATE TABLE IF NOT EXISTS `j_chronoforms` (
@@ -344,20 +361,21 @@ CREATE TABLE IF NOT EXISTS `j_chronoforms` (
   `published` tinyint(1) NOT NULL DEFAULT '1',
   `app` varchar(100) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- Volcado de datos para la tabla `j_chronoforms`
+-- Dumping data for table `j_chronoforms`
 --
 
 INSERT INTO `j_chronoforms` (`id`, `name`, `form_type`, `content`, `wizardcode`, `events_actions_map`, `params`, `published`, `app`) VALUES
 (1, 'proveedores', 1, '<div style="margin:0 auto;width:60%" class="well">\r\n<fieldset>\r\n<legend>Solicitud de ingreso al registro de proovedores</legend>\r\n<p style="text-align:right"><i>* Campos requeridos</i></p><div class="ccms_form_element cfdiv_text" id="name1_container_div" style=""><label>Nombre o razón social: *</label><input maxlength="150" size="30" class=" validate[''required'']" title="" type="text" value="" name="name" />\n<div class="clear"></div><div id="error-message-name"></div></div><div class="ccms_form_element cfdiv_text" id="cuit1_container_div" style=""><label>CUIT: *</label><input maxlength="15" size="30" class=" validate[''number'']" title="" type="text" value="" name="cuit" />\n<div class="small-message">Ingrese cuit sin espacios ni guiones</div><div class="clear"></div><div id="error-message-cuit"></div></div><div class="ccms_form_element cfdiv_checkboxgroup radios_over" id="categories1_container_div" style=""><label>Categorías: *</label><input type="hidden" name="categories" value="" alt="ghost" />\n<div style="float:left; clear:none;"><div><input type="checkbox" name="categories[]" id="categories_0" title="" value="bienes" class="validate[''group[5]'']" />\n<label for="categories_0">bienes</label>\n</div><div><input type="checkbox" name="categories[]" id="categories_1" title="" value="obra" class="validate[''group[5]'']" />\n<label for="categories_1">obra</label>\n</div><div><input type="checkbox" name="categories[]" id="categories_2" title="" value="consultoría" class="validate[''group[5]'']" />\n<label for="categories_2">consultoría</label>\n</div><div><input type="checkbox" name="categories[]" id="categories_3" title="" value="servicios" class="validate[''group[5]'']" />\n<label for="categories_3">servicios</label>\n</div></div><div class="clear"></div><div id="error-message-categories"></div></div><div class="ccms_form_element cfdiv_text" id="address1_container_div" style=""><label>Dirección: *</label><input maxlength="150" size="30" class=" validate[''required'']" title="" type="text" value="" name="address" />\n<div class="clear"></div><div id="error-message-address"></div></div><div class="ccms_form_element cfdiv_text" id="phone1_container_div" style=""><label>Teléfono:</label><input maxlength="150" size="30" class="" title="" type="text" value="" name="phone" />\n<div class="clear"></div><div id="error-message-phone"></div></div><div class="ccms_form_element cfdiv_text" id="email1_container_div" style=""><label>Correo electrónico: *</label><input maxlength="150" size="30" class=" validate[''required'',''email'']" title="" type="text" value="" name="email" />\n<div class="clear"></div><div id="error-message-email"></div></div><div class="ccms_form_element cfdiv_text" id="webpage1_container_div" style=""><label>Página web:</label><input maxlength="150" size="30" class=" validate[''url'']" title="" type="text" value="" name="webpage" />\n<div class="clear"></div><div id="error-message-webpage"></div></div><div class="ccms_form_element cfdiv_textarea" id="contacts1_container_div" style=""><label>Contactos:</label><textarea cols="45" rows="12" class="" title="" name="contacts"></textarea>\n<div class="clear"></div><div id="error-message-contacts"></div></div><p>\r\nAdicionalmente puede <a href="#" target="_BLANK">descargar el formulario completo</a>, completarlo y adjuntarlo para validación. Una vez validado, se le solicitará la firma del mismo.\r\n</p><div class="ccms_form_element cfdiv_file" id="attachment1_container_div" style=""><label>Formulario para firma:</label><input class="" title="" type="file" name="attachment" />\n<div class="clear"></div><div id="error-message-attachment"></div></div><div class="ccms_form_element cfdiv_submit" id="input_submit_21_container_div" style="text-align:right"><input name="input_submit_2" class="btn btn-large" value="Enviar" type="submit" />\n<div class="clear"></div><div id="error-message-input_submit_2"></div></div></div>\r\n</fieldset><div class="ccms_form_element cfdiv_empty" id="empty_container_div" style=""><div class="clear"></div><div id="error-message-empty"></div></div>', 'array (\n  ''field_15'' => \n  array (\n    ''input_container_15_area_label'' => ''Container #15'',\n    ''input_container_15_collapsed'' => ''0'',\n    ''input_container_15_container_type'' => ''custom'',\n    ''input_container_15_container_class'' => '''',\n    ''input_container_15_start_code'' => ''<div style="margin:0 auto;width:60%" class="well">\r\n<fieldset>\r\n<legend>Solicitud de ingreso al registro de proovedores</legend>\r\n<p style="text-align:right"><i>* Campos requeridos</i></p>'',\n    ''input_container_15_end_code'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''container'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_1'' => \n  array (\n    ''input_text_1_input_id'' => '''',\n    ''input_text_1_label_text'' => ''Nombre o razón social: *'',\n    ''input_text_1_input_name'' => ''name'',\n    ''input_text_1_input_value'' => '''',\n    ''input_text_1_input_maxlength'' => ''150'',\n    ''input_text_1_input_size'' => ''30'',\n    ''input_text_1_input_class'' => '''',\n    ''input_text_1_input_title'' => '''',\n    ''input_text_1_label_over'' => ''0'',\n    ''input_text_1_hide_label'' => ''0'',\n    ''input_text_1_multiline_start'' => ''0'',\n    ''input_text_1_multiline_add'' => ''0'',\n    ''input_text_1_validations'' => ''required'',\n    ''input_text_1_instructions'' => '''',\n    ''input_text_1_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''text'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_3'' => \n  array (\n    ''input_text_3_input_id'' => '''',\n    ''input_text_3_label_text'' => ''CUIT: *'',\n    ''input_text_3_input_name'' => ''cuit'',\n    ''input_text_3_input_value'' => '''',\n    ''input_text_3_input_maxlength'' => ''15'',\n    ''input_text_3_input_size'' => ''30'',\n    ''input_text_3_input_class'' => '''',\n    ''input_text_3_input_title'' => '''',\n    ''input_text_3_label_over'' => ''0'',\n    ''input_text_3_hide_label'' => ''0'',\n    ''input_text_3_multiline_start'' => ''0'',\n    ''input_text_3_multiline_add'' => ''0'',\n    ''input_text_3_validations'' => ''number'',\n    ''input_text_3_instructions'' => ''Ingrese cuit sin espacios ni guiones'',\n    ''input_text_3_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''text'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_5'' => \n  array (\n    ''input_checkbox_group_5_options'' => ''bienes=bienes\r\nobra=obra\r\nconsultoría=consultoría\r\nservicios=servicios'',\n    ''input_checkbox_group_5_validations'' => ''group[5]'',\n    ''input_checkbox_group_5_instructions'' => '''',\n    ''input_checkbox_group_5_tooltip'' => '''',\n    ''input_checkbox_group_5_input_id'' => '''',\n    ''input_checkbox_group_5_label_text'' => ''Categorías: *'',\n    ''input_checkbox_group_5_input_name'' => ''categories'',\n    ''input_checkbox_group_5_input_title'' => '''',\n    ''input_checkbox_group_5_radios_over'' => ''1'',\n    ''input_checkbox_group_5_checked'' => '''',\n    ''input_checkbox_group_5_ghost'' => ''1'',\n    ''input_checkbox_group_5_ghost_value'' => '''',\n    ''input_checkbox_group_5_label_over'' => ''0'',\n    ''input_checkbox_group_5_hide_label'' => ''0'',\n    ''input_checkbox_group_5_multiline_start'' => ''0'',\n    ''input_checkbox_group_5_multiline_add'' => ''0'',\n    ''input_checkbox_group_5_enable_dynamic_data'' => ''0'',\n    ''input_checkbox_group_5_data_path'' => '''',\n    ''input_checkbox_group_5_value_key'' => '''',\n    ''input_checkbox_group_5_text_key'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''checkbox_group'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_6'' => \n  array (\n    ''input_text_6_input_id'' => '''',\n    ''input_text_6_label_text'' => ''Dirección: *'',\n    ''input_text_6_input_name'' => ''address'',\n    ''input_text_6_input_value'' => '''',\n    ''input_text_6_input_maxlength'' => ''150'',\n    ''input_text_6_input_size'' => ''30'',\n    ''input_text_6_input_class'' => '''',\n    ''input_text_6_input_title'' => '''',\n    ''input_text_6_label_over'' => ''0'',\n    ''input_text_6_hide_label'' => ''0'',\n    ''input_text_6_multiline_start'' => ''0'',\n    ''input_text_6_multiline_add'' => ''0'',\n    ''input_text_6_validations'' => ''required'',\n    ''input_text_6_instructions'' => '''',\n    ''input_text_6_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''text'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_7'' => \n  array (\n    ''input_text_7_input_id'' => '''',\n    ''input_text_7_label_text'' => ''Teléfono:'',\n    ''input_text_7_input_name'' => ''phone'',\n    ''input_text_7_input_value'' => '''',\n    ''input_text_7_input_maxlength'' => ''150'',\n    ''input_text_7_input_size'' => ''30'',\n    ''input_text_7_input_class'' => '''',\n    ''input_text_7_input_title'' => '''',\n    ''input_text_7_label_over'' => ''0'',\n    ''input_text_7_hide_label'' => ''0'',\n    ''input_text_7_multiline_start'' => ''0'',\n    ''input_text_7_multiline_add'' => ''0'',\n    ''input_text_7_validations'' => '''',\n    ''input_text_7_instructions'' => '''',\n    ''input_text_7_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''text'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_8'' => \n  array (\n    ''input_text_8_input_id'' => '''',\n    ''input_text_8_label_text'' => ''Correo electrónico: *'',\n    ''input_text_8_input_name'' => ''email'',\n    ''input_text_8_input_value'' => '''',\n    ''input_text_8_input_maxlength'' => ''150'',\n    ''input_text_8_input_size'' => ''30'',\n    ''input_text_8_input_class'' => '''',\n    ''input_text_8_input_title'' => '''',\n    ''input_text_8_label_over'' => ''0'',\n    ''input_text_8_hide_label'' => ''0'',\n    ''input_text_8_multiline_start'' => ''0'',\n    ''input_text_8_multiline_add'' => ''0'',\n    ''input_text_8_validations'' => ''required,email'',\n    ''input_text_8_instructions'' => '''',\n    ''input_text_8_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''text'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_10'' => \n  array (\n    ''input_text_10_input_id'' => '''',\n    ''input_text_10_label_text'' => ''Página web:'',\n    ''input_text_10_input_name'' => ''webpage'',\n    ''input_text_10_input_value'' => '''',\n    ''input_text_10_input_maxlength'' => ''150'',\n    ''input_text_10_input_size'' => ''30'',\n    ''input_text_10_input_class'' => '''',\n    ''input_text_10_input_title'' => '''',\n    ''input_text_10_label_over'' => ''0'',\n    ''input_text_10_hide_label'' => ''0'',\n    ''input_text_10_multiline_start'' => ''0'',\n    ''input_text_10_multiline_add'' => ''0'',\n    ''input_text_10_validations'' => ''url'',\n    ''input_text_10_instructions'' => '''',\n    ''input_text_10_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''text'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_12'' => \n  array (\n    ''input_textarea_12_input_id'' => '''',\n    ''input_textarea_12_label_text'' => ''Contactos:'',\n    ''input_textarea_12_input_name'' => ''contacts'',\n    ''input_textarea_12_input_value'' => '''',\n    ''input_textarea_12_input_class'' => '''',\n    ''input_textarea_12_input_title'' => '''',\n    ''input_textarea_12_label_over'' => ''0'',\n    ''input_textarea_12_hide_label'' => ''0'',\n    ''input_textarea_12_input_cols'' => ''45'',\n    ''input_textarea_12_input_rows'' => ''12'',\n    ''input_textarea_12_wysiwyg_editor'' => ''0'',\n    ''input_textarea_12_editor_buttons'' => ''1'',\n    ''input_textarea_12_editor_width'' => ''400'',\n    ''input_textarea_12_editor_height'' => ''200'',\n    ''input_textarea_12_multiline_start'' => ''0'',\n    ''input_textarea_12_multiline_add'' => ''0'',\n    ''input_textarea_12_validations'' => '''',\n    ''input_textarea_12_instructions'' => '''',\n    ''input_textarea_12_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''textarea'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_14'' => \n  array (\n    ''input_container_14_area_label'' => ''Container #14'',\n    ''input_container_14_collapsed'' => ''0'',\n    ''input_container_14_container_type'' => ''custom'',\n    ''input_container_14_container_class'' => '''',\n    ''input_container_14_start_code'' => ''<p>\r\nAdicionalmente puede <a href="#" target="_BLANK">descargar el formulario completo</a>, completarlo y adjuntarlo para validación. Una vez validado, se le solicitará la firma del mismo.\r\n</p>'',\n    ''input_container_14_end_code'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''container'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_13'' => \n  array (\n    ''input_file_13_input_id'' => '''',\n    ''input_file_13_label_text'' => ''Formulario para firma:'',\n    ''input_file_13_input_name'' => ''attachment'',\n    ''input_file_13_input_class'' => '''',\n    ''input_file_13_input_title'' => '''',\n    ''input_file_13_label_over'' => ''0'',\n    ''input_file_13_hide_label'' => ''0'',\n    ''input_file_13_ghost'' => ''0'',\n    ''input_file_13_ghost_value'' => '''',\n    ''input_file_13_multiline_start'' => ''0'',\n    ''input_file_13_multiline_add'' => ''0'',\n    ''input_file_13_validations'' => '''',\n    ''input_file_13_instructions'' => '''',\n    ''input_file_13_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''file'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_2'' => \n  array (\n    ''input_submit_2_input_id'' => '''',\n    ''input_submit_2_input_name'' => ''input_submit_2'',\n    ''input_submit_2_input_value'' => ''Enviar'',\n    ''input_submit_2_input_class'' => ''btn btn-large'',\n    ''input_submit_2_button_type'' => ''submit'',\n    ''input_submit_2_button_align'' => ''right'',\n    ''input_submit_2_back_button'' => ''0'',\n    ''input_submit_2_reset_button'' => ''0'',\n    ''input_submit_2_back_button_value'' => ''Back'',\n    ''input_submit_2_reset_button_value'' => ''Reset'',\n    ''input_submit_2_multiline_start'' => ''0'',\n    ''input_submit_2_multiline_add'' => ''0'',\n    ''tag'' => ''input'',\n    ''type'' => ''submit'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_16'' => \n  array (\n    ''input_container_16_area_label'' => ''Container #16'',\n    ''input_container_16_collapsed'' => ''0'',\n    ''input_container_16_container_type'' => ''custom'',\n    ''input_container_16_container_class'' => '''',\n    ''input_container_16_start_code'' => ''</div>\r\n</fieldset>'',\n    ''input_container_16_end_code'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''container'',\n    ''container_id'' => ''0'',\n  ),\n)', 'YToxOntzOjY6ImV2ZW50cyI7YToyOntzOjQ6ImxvYWQiO2E6MTp7czo3OiJhY3Rpb25zIjthOjE6e3M6MjA6ImNmYWN0aW9uX3Nob3dfaHRtbF80IjtzOjA6IiI7fX1zOjY6InN1Ym1pdCI7YToxOntzOjc6ImFjdGlvbnMiO2E6MTp7czozNzoiY2ZhY3Rpb25fYXV0b19zZXJ2ZXJzaWRlX3ZhbGlkYXRpb25fNiI7YToxOntzOjY6ImV2ZW50cyI7YTo0OntzOjUwOiJjZmFjdGlvbmV2ZW50X2F1dG9fc2VydmVyc2lkZV92YWxpZGF0aW9uXzZfc3VjY2VzcyI7YToxOntzOjc6ImFjdGlvbnMiO2E6NTp7czoyNToiY2ZhY3Rpb25faGFuZGxlX2FycmF5c18xNiI7czowOiIiO3M6MjQ6ImNmYWN0aW9uX3VwbG9hZF9maWxlc18xNCI7YToxOntzOjY6ImV2ZW50cyI7YToyOntzOjM3OiJjZmFjdGlvbmV2ZW50X3VwbG9hZF9maWxlc18xNF9zdWNjZXNzIjtzOjA6IiI7czozNDoiY2ZhY3Rpb25ldmVudF91cGxvYWRfZmlsZXNfMTRfZmFpbCI7YToxOntzOjc6ImFjdGlvbnMiO2E6MTp7czoyMjoiY2ZhY3Rpb25fZXZlbnRfbG9vcF8xNSI7czowOiIiO319fX1zOjE4OiJjZmFjdGlvbl9kYl9zYXZlXzgiO3M6MDoiIjtzOjE2OiJjZmFjdGlvbl9lbWFpbF85IjtzOjA6IiI7czozMToiY2ZhY3Rpb25fc2hvd190aGFua3NfbWVzc2FnZV8xMCI7czowOiIiO319czozNzoiY2ZhY3Rpb25ldmVudF91cGxvYWRfZmlsZXNfMTRfc3VjY2VzcyI7czowOiIiO3M6MzQ6ImNmYWN0aW9uZXZlbnRfdXBsb2FkX2ZpbGVzXzE0X2ZhaWwiO3M6MDoiIjtzOjQ3OiJjZmFjdGlvbmV2ZW50X2F1dG9fc2VydmVyc2lkZV92YWxpZGF0aW9uXzZfZmFpbCI7YToxOntzOjc6ImFjdGlvbnMiO2E6MTp7czoyMToiY2ZhY3Rpb25fZXZlbnRfbG9vcF83IjtzOjA6IiI7fX19fX19fX0=', '{"form_mode":"advanced","form_method":"post","auto_detect_settings":"1","load_files":"1","tight_layout":"1","action_url":"","form_tag_attach":"enctype=\\"multipart\\/form-data\\"","add_form_tags":"1","relative_url":"1","dynamic_files":"0","show_top_errors":"1","datepicker_config":"","datepicker_type":"0","datepicker_moo_style":"datepicker_dashboard","enable_jsvalidation":"1","jsvalidation_errors":"1","jsvalidation_theme":"classic","jsvalidation_lang":"es","jsvalidation_showErrors":"0","jsvalidation_errorsLocation":"1","adminview_actions":"","dataview_actions":"","app_exclusive":"0","dataview_fields_j_chronoforms_data_proveedores":"cf_created,cuit,email,attachment"}', 1, ''),
-(2, 'reclamos', 1, '<div style="margin:0 auto;width:60%" class="well">\r\n<fieldset>\r\n<legend>Mensaje y/o Reclamo</legend>\r\n<p style="text-align:right"><i>* Campos requeridos</i></p><div class="ccms_form_element cfdiv_text" id="name1_container_div" style=""><label>Nombre: *</label><input maxlength="150" size="30" class=" validate[''required'']" title="" type="text" value="" name="name" />\n<div class="clear"></div><div id="error-message-name"></div></div><div class="ccms_form_element cfdiv_text" id="surname1_container_div" style=""><label>Apellido: *</label><input maxlength="150" size="30" class=" validate[''required'']" title="" type="text" value="" name="surname" />\n<div class="clear"></div><div id="error-message-surname"></div></div><div class="ccms_form_element cfdiv_text" id="organization1_container_div" style=""><label>Organización: *</label><input maxlength="150" size="30" class=" validate[''required'']" title="" type="text" value="" name="organization" />\n<div class="clear"></div><div id="error-message-organization"></div></div><div class="ccms_form_element cfdiv_text" id="project1_container_div" style=""><label>Proyecto: *</label><input maxlength="150" size="30" class=" validate[''required'']" title="" type="text" value="" name="project" />\n<div class="clear"></div><div id="error-message-project"></div></div><div class="ccms_form_element cfdiv_text" id="reference1_container_div" style=""><label>Contrato de referencia:</label><input maxlength="150" size="30" class="" title="" type="text" value="" name="reference" />\n<div class="clear"></div><div id="error-message-reference"></div></div><div class="ccms_form_element cfdiv_radio radios_over" id="subject1_container_div" style=""><label>Tema por el cual se genera el reclamo: *</label><input type="hidden" name="subject" value="" alt="ghost" />\n<div style="float:left; clear:none;"><div><input type="radio" name="subject" id="subject_0" title="" value="Adquisiciones en curso" class="validate[''required'']" />\n<label for="subject_0">Adquisiciones en curso</label>\n</div><div><input type="radio" name="subject" id="subject_1" title="" value="Gestion de contrato" class="validate[''required'']" />\n<label for="subject_1">Gestion de contrato</label>\n</div><div><input type="radio" name="subject" id="subject_2" title="" value="Pagos" class="validate[''required'']" />\n<label for="subject_2">Pagos</label>\n</div><div><input type="radio" name="subject" id="subject_3" title="" value="Otros" class="validate[''required'']" />\n<label for="subject_3">Otros</label>\n</div></div><div class="clear"></div><div id="error-message-subject"></div></div><div class="ccms_form_element cfdiv_text" id="email1_container_div" style=""><label>Correo electrónico: *</label><input maxlength="150" size="30" class=" validate[''required'',''email'']" title="" type="text" value="" name="email" />\n<div class="clear"></div><div id="error-message-email"></div></div><div class="ccms_form_element cfdiv_text" id="phone1_container_div" style=""><label>Teléfono:</label><input maxlength="150" size="30" class="" title="" type="text" value="" name="phone" />\n<div class="clear"></div><div id="error-message-phone"></div></div><div class="ccms_form_element cfdiv_textarea" id="message1_container_div" style=""><label>Mensaje: *</label><textarea cols="45" rows="12" class=" validate[''required'']" title="" name="message"></textarea>\n<div class="clear"></div><div id="error-message-message"></div></div><div class="ccms_form_element cfdiv_submit" id="input_submit_101_container_div" style="text-align:right"><input name="input_submit_10" class="btn btn-large" value="Enviar" type="submit" />\n<div class="clear"></div><div id="error-message-input_submit_10"></div></div><div class="ccms_form_element cfdiv_empty" id="empty_container_div" style=""><div class="clear"></div><div id="error-message-empty"></div></div>', 'array (\n  ''field_12'' => \n  array (\n    ''input_container_12_area_label'' => ''Container #12'',\n    ''input_container_12_collapsed'' => ''0'',\n    ''input_container_12_container_type'' => ''custom'',\n    ''input_container_12_container_class'' => '''',\n    ''input_container_12_start_code'' => ''<div style="margin:0 auto;width:60%" class="well">\r\n<fieldset>\r\n<legend>Mensaje y/o Reclamo</legend>\r\n<p style="text-align:right"><i>* Campos requeridos</i></p>'',\n    ''input_container_12_end_code'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''container'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_1'' => \n  array (\n    ''input_text_1_input_id'' => '''',\n    ''input_text_1_label_text'' => ''Nombre: *'',\n    ''input_text_1_input_name'' => ''name'',\n    ''input_text_1_input_value'' => '''',\n    ''input_text_1_input_maxlength'' => ''150'',\n    ''input_text_1_input_size'' => ''30'',\n    ''input_text_1_input_class'' => '''',\n    ''input_text_1_input_title'' => '''',\n    ''input_text_1_label_over'' => ''0'',\n    ''input_text_1_hide_label'' => ''0'',\n    ''input_text_1_multiline_start'' => ''0'',\n    ''input_text_1_multiline_add'' => ''0'',\n    ''input_text_1_validations'' => ''required'',\n    ''input_text_1_instructions'' => '''',\n    ''input_text_1_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''text'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_9'' => \n  array (\n    ''input_text_9_input_id'' => '''',\n    ''input_text_9_label_text'' => ''Apellido: *'',\n    ''input_text_9_input_name'' => ''surname'',\n    ''input_text_9_input_value'' => '''',\n    ''input_text_9_input_maxlength'' => ''150'',\n    ''input_text_9_input_size'' => ''30'',\n    ''input_text_9_input_class'' => '''',\n    ''input_text_9_input_title'' => '''',\n    ''input_text_9_label_over'' => ''0'',\n    ''input_text_9_hide_label'' => ''0'',\n    ''input_text_9_multiline_start'' => ''0'',\n    ''input_text_9_multiline_add'' => ''0'',\n    ''input_text_9_validations'' => ''required'',\n    ''input_text_9_instructions'' => '''',\n    ''input_text_9_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''text'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_2'' => \n  array (\n    ''input_text_2_input_id'' => '''',\n    ''input_text_2_label_text'' => ''Organización: *'',\n    ''input_text_2_input_name'' => ''organization'',\n    ''input_text_2_input_value'' => '''',\n    ''input_text_2_input_maxlength'' => ''150'',\n    ''input_text_2_input_size'' => ''30'',\n    ''input_text_2_input_class'' => '''',\n    ''input_text_2_input_title'' => '''',\n    ''input_text_2_label_over'' => ''0'',\n    ''input_text_2_hide_label'' => ''0'',\n    ''input_text_2_multiline_start'' => ''0'',\n    ''input_text_2_multiline_add'' => ''0'',\n    ''input_text_2_validations'' => ''required'',\n    ''input_text_2_instructions'' => '''',\n    ''input_text_2_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''text'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_3'' => \n  array (\n    ''input_text_3_input_id'' => '''',\n    ''input_text_3_label_text'' => ''Proyecto: *'',\n    ''input_text_3_input_name'' => ''project'',\n    ''input_text_3_input_value'' => '''',\n    ''input_text_3_input_maxlength'' => ''150'',\n    ''input_text_3_input_size'' => ''30'',\n    ''input_text_3_input_class'' => '''',\n    ''input_text_3_input_title'' => '''',\n    ''input_text_3_label_over'' => ''0'',\n    ''input_text_3_hide_label'' => ''0'',\n    ''input_text_3_multiline_start'' => ''0'',\n    ''input_text_3_multiline_add'' => ''0'',\n    ''input_text_3_validations'' => ''required'',\n    ''input_text_3_instructions'' => '''',\n    ''input_text_3_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''text'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_4'' => \n  array (\n    ''input_text_4_input_id'' => '''',\n    ''input_text_4_label_text'' => ''Contrato de referencia:'',\n    ''input_text_4_input_name'' => ''reference'',\n    ''input_text_4_input_value'' => '''',\n    ''input_text_4_input_maxlength'' => ''150'',\n    ''input_text_4_input_size'' => ''30'',\n    ''input_text_4_input_class'' => '''',\n    ''input_text_4_input_title'' => '''',\n    ''input_text_4_label_over'' => ''0'',\n    ''input_text_4_hide_label'' => ''0'',\n    ''input_text_4_multiline_start'' => ''0'',\n    ''input_text_4_multiline_add'' => ''0'',\n    ''input_text_4_validations'' => '''',\n    ''input_text_4_instructions'' => '''',\n    ''input_text_4_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''text'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_5'' => \n  array (\n    ''input_radio_5_input_id'' => '''',\n    ''input_radio_5_label_text'' => ''Tema por el cual se genera el reclamo: *'',\n    ''input_radio_5_input_name'' => ''subject'',\n    ''input_radio_5_input_value'' => '''',\n    ''input_radio_5_radios_over'' => ''1'',\n    ''input_radio_5_legend'' => '''',\n    ''input_radio_5_ghost'' => ''1'',\n    ''input_radio_5_ghost_value'' => '''',\n    ''input_radio_5_input_title'' => '''',\n    ''input_radio_5_label_over'' => ''0'',\n    ''input_radio_5_hide_label'' => ''0'',\n    ''input_radio_5_multiline_start'' => ''0'',\n    ''input_radio_5_multiline_add'' => ''0'',\n    ''input_radio_5_enable_dynamic_data'' => ''0'',\n    ''input_radio_5_data_path'' => '''',\n    ''input_radio_5_value_key'' => '''',\n    ''input_radio_5_text_key'' => '''',\n    ''input_radio_5_options'' => ''Adquisiciones en curso=Adquisiciones en curso\r\nGestion de contrato=Gestion de contrato\r\nPagos=Pagos\r\nOtros=Otros'',\n    ''input_radio_5_validations'' => ''required'',\n    ''input_radio_5_instructions'' => '''',\n    ''input_radio_5_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''radio'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_6'' => \n  array (\n    ''input_text_6_input_id'' => '''',\n    ''input_text_6_label_text'' => ''Correo electrónico: *'',\n    ''input_text_6_input_name'' => ''email'',\n    ''input_text_6_input_value'' => '''',\n    ''input_text_6_input_maxlength'' => ''150'',\n    ''input_text_6_input_size'' => ''30'',\n    ''input_text_6_input_class'' => '''',\n    ''input_text_6_input_title'' => '''',\n    ''input_text_6_label_over'' => ''0'',\n    ''input_text_6_hide_label'' => ''0'',\n    ''input_text_6_multiline_start'' => ''0'',\n    ''input_text_6_multiline_add'' => ''0'',\n    ''input_text_6_validations'' => ''required,email'',\n    ''input_text_6_instructions'' => '''',\n    ''input_text_6_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''text'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_7'' => \n  array (\n    ''input_text_7_input_id'' => '''',\n    ''input_text_7_label_text'' => ''Teléfono:'',\n    ''input_text_7_input_name'' => ''phone'',\n    ''input_text_7_input_value'' => '''',\n    ''input_text_7_input_maxlength'' => ''150'',\n    ''input_text_7_input_size'' => ''30'',\n    ''input_text_7_input_class'' => '''',\n    ''input_text_7_input_title'' => '''',\n    ''input_text_7_label_over'' => ''0'',\n    ''input_text_7_hide_label'' => ''0'',\n    ''input_text_7_multiline_start'' => ''0'',\n    ''input_text_7_multiline_add'' => ''0'',\n    ''input_text_7_validations'' => '''',\n    ''input_text_7_instructions'' => '''',\n    ''input_text_7_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''text'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_8'' => \n  array (\n    ''input_textarea_8_input_id'' => '''',\n    ''input_textarea_8_label_text'' => ''Mensaje: *'',\n    ''input_textarea_8_input_name'' => ''message'',\n    ''input_textarea_8_input_value'' => '''',\n    ''input_textarea_8_input_class'' => '''',\n    ''input_textarea_8_input_title'' => '''',\n    ''input_textarea_8_label_over'' => ''0'',\n    ''input_textarea_8_hide_label'' => ''0'',\n    ''input_textarea_8_input_cols'' => ''45'',\n    ''input_textarea_8_input_rows'' => ''12'',\n    ''input_textarea_8_wysiwyg_editor'' => ''0'',\n    ''input_textarea_8_editor_buttons'' => ''1'',\n    ''input_textarea_8_editor_width'' => ''400'',\n    ''input_textarea_8_editor_height'' => ''200'',\n    ''input_textarea_8_multiline_start'' => ''0'',\n    ''input_textarea_8_multiline_add'' => ''0'',\n    ''input_textarea_8_validations'' => ''required'',\n    ''input_textarea_8_instructions'' => '''',\n    ''input_textarea_8_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''textarea'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_10'' => \n  array (\n    ''input_submit_10_input_id'' => '''',\n    ''input_submit_10_input_name'' => ''input_submit_10'',\n    ''input_submit_10_input_value'' => ''Enviar'',\n    ''input_submit_10_input_class'' => ''btn btn-large'',\n    ''input_submit_10_button_type'' => ''submit'',\n    ''input_submit_10_button_align'' => ''right'',\n    ''input_submit_10_back_button'' => ''0'',\n    ''input_submit_10_reset_button'' => ''0'',\n    ''input_submit_10_back_button_value'' => ''Back'',\n    ''input_submit_10_reset_button_value'' => ''Reset'',\n    ''input_submit_10_multiline_start'' => ''0'',\n    ''input_submit_10_multiline_add'' => ''0'',\n    ''tag'' => ''input'',\n    ''type'' => ''submit'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_13'' => \n  array (\n    ''input_container_13_area_label'' => ''Container #13'',\n    ''input_container_13_collapsed'' => ''0'',\n    ''input_container_13_container_type'' => '''',\n    ''input_container_13_container_class'' => '''',\n    ''input_container_13_start_code'' => ''</div>\r\n</fieldset>'',\n    ''input_container_13_end_code'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''container'',\n    ''container_id'' => ''0'',\n  ),\n)', 'YToxOntzOjY6ImV2ZW50cyI7YToyOntzOjQ6ImxvYWQiO2E6MTp7czo3OiJhY3Rpb25zIjthOjE6e3M6MjA6ImNmYWN0aW9uX3Nob3dfaHRtbF8wIjtzOjA6IiI7fX1zOjY6InN1Ym1pdCI7YToxOntzOjc6ImFjdGlvbnMiO2E6MTp7czozNzoiY2ZhY3Rpb25fYXV0b19zZXJ2ZXJzaWRlX3ZhbGlkYXRpb25fMiI7YToxOntzOjY6ImV2ZW50cyI7YToyOntzOjUwOiJjZmFjdGlvbmV2ZW50X2F1dG9fc2VydmVyc2lkZV92YWxpZGF0aW9uXzJfc3VjY2VzcyI7YToxOntzOjc6ImFjdGlvbnMiO2E6Mzp7czoxODoiY2ZhY3Rpb25fZGJfc2F2ZV82IjtzOjA6IiI7czoxNjoiY2ZhY3Rpb25fZW1haWxfNCI7czowOiIiO3M6MzE6ImNmYWN0aW9uX3Nob3dfdGhhbmtzX21lc3NhZ2VfMTAiO3M6MDoiIjt9fXM6NDc6ImNmYWN0aW9uZXZlbnRfYXV0b19zZXJ2ZXJzaWRlX3ZhbGlkYXRpb25fMl9mYWlsIjthOjE6e3M6NzoiYWN0aW9ucyI7YToxOntzOjIxOiJjZmFjdGlvbl9ldmVudF9sb29wXzMiO3M6MDoiIjt9fX19fX19fQ==', '{"form_mode":"advanced","form_method":"post","auto_detect_settings":"1","load_files":"1","tight_layout":"1","action_url":"","form_tag_attach":"","add_form_tags":"1","relative_url":"1","dynamic_files":"0","show_top_errors":"1","datepicker_config":"","datepicker_type":"0","datepicker_moo_style":"datepicker_dashboard","enable_jsvalidation":"1","jsvalidation_errors":"1","jsvalidation_theme":"classic","jsvalidation_lang":"es","jsvalidation_showErrors":"0","jsvalidation_errorsLocation":"1","adminview_actions":"","dataview_actions":"","app_exclusive":"0"}', 1, '');
+(2, 'reclamos', 1, '<div style="margin:0 auto;width:60%" class="well">\r\n<fieldset>\r\n<legend>Mensaje y/o Reclamo</legend>\r\n<p style="text-align:right"><i>* Campos requeridos</i></p><div class="ccms_form_element cfdiv_text" id="name1_container_div" style=""><label>Nombre: *</label><input maxlength="150" size="30" class=" validate[''required'']" title="" type="text" value="" name="name" />\n<div class="clear"></div><div id="error-message-name"></div></div><div class="ccms_form_element cfdiv_text" id="surname1_container_div" style=""><label>Apellido: *</label><input maxlength="150" size="30" class=" validate[''required'']" title="" type="text" value="" name="surname" />\n<div class="clear"></div><div id="error-message-surname"></div></div><div class="ccms_form_element cfdiv_text" id="organization1_container_div" style=""><label>Organización: *</label><input maxlength="150" size="30" class=" validate[''required'']" title="" type="text" value="" name="organization" />\n<div class="clear"></div><div id="error-message-organization"></div></div><div class="ccms_form_element cfdiv_text" id="project1_container_div" style=""><label>Proyecto: *</label><input maxlength="150" size="30" class=" validate[''required'']" title="" type="text" value="" name="project" />\n<div class="clear"></div><div id="error-message-project"></div></div><div class="ccms_form_element cfdiv_text" id="reference1_container_div" style=""><label>Contrato de referencia:</label><input maxlength="150" size="30" class="" title="" type="text" value="" name="reference" />\n<div class="clear"></div><div id="error-message-reference"></div></div><div class="ccms_form_element cfdiv_radio radios_over" id="subject1_container_div" style=""><label>Tema por el cual se genera el reclamo: *</label><input type="hidden" name="subject" value="" alt="ghost" />\n<div style="float:left; clear:none;"><div><input type="radio" name="subject" id="subject_0" title="" value="Adquisiciones en curso" class="validate[''required'']" />\n<label for="subject_0">Adquisiciones en curso</label>\n</div><div><input type="radio" name="subject" id="subject_1" title="" value="Gestion de contrato" class="validate[''required'']" />\n<label for="subject_1">Gestion de contrato</label>\n</div><div><input type="radio" name="subject" id="subject_2" title="" value="Pagos" class="validate[''required'']" />\n<label for="subject_2">Pagos</label>\n</div><div><input type="radio" name="subject" id="subject_3" title="" value="Otros" class="validate[''required'']" />\n<label for="subject_3">Otros</label>\n</div></div><div class="clear"></div><div id="error-message-subject"></div></div><div class="ccms_form_element cfdiv_text" id="email1_container_div" style=""><label>Correo electrónico: *</label><input maxlength="150" size="30" class=" validate[''required'',''email'']" title="" type="text" value="" name="email" />\n<div class="clear"></div><div id="error-message-email"></div></div><div class="ccms_form_element cfdiv_text" id="phone1_container_div" style=""><label>Teléfono:</label><input maxlength="150" size="30" class="" title="" type="text" value="" name="phone" />\n<div class="clear"></div><div id="error-message-phone"></div></div><div class="ccms_form_element cfdiv_textarea" id="message1_container_div" style=""><label>Mensaje: *</label><textarea cols="45" rows="12" class=" validate[''required'']" title="" name="message"></textarea>\n<div class="clear"></div><div id="error-message-message"></div></div><div class="ccms_form_element cfdiv_submit" id="input_submit_101_container_div" style="text-align:right"><input name="input_submit_10" class="btn btn-large" value="Enviar" type="submit" />\n<div class="clear"></div><div id="error-message-input_submit_10"></div></div><div class="ccms_form_element cfdiv_empty" id="empty_container_div" style=""><div class="clear"></div><div id="error-message-empty"></div></div>', 'array (\n  ''field_12'' => \n  array (\n    ''input_container_12_area_label'' => ''Container #12'',\n    ''input_container_12_collapsed'' => ''0'',\n    ''input_container_12_container_type'' => ''custom'',\n    ''input_container_12_container_class'' => '''',\n    ''input_container_12_start_code'' => ''<div style="margin:0 auto;width:60%" class="well">\r\n<fieldset>\r\n<legend>Mensaje y/o Reclamo</legend>\r\n<p style="text-align:right"><i>* Campos requeridos</i></p>'',\n    ''input_container_12_end_code'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''container'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_1'' => \n  array (\n    ''input_text_1_input_id'' => '''',\n    ''input_text_1_label_text'' => ''Nombre: *'',\n    ''input_text_1_input_name'' => ''name'',\n    ''input_text_1_input_value'' => '''',\n    ''input_text_1_input_maxlength'' => ''150'',\n    ''input_text_1_input_size'' => ''30'',\n    ''input_text_1_input_class'' => '''',\n    ''input_text_1_input_title'' => '''',\n    ''input_text_1_label_over'' => ''0'',\n    ''input_text_1_hide_label'' => ''0'',\n    ''input_text_1_multiline_start'' => ''0'',\n    ''input_text_1_multiline_add'' => ''0'',\n    ''input_text_1_validations'' => ''required'',\n    ''input_text_1_instructions'' => '''',\n    ''input_text_1_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''text'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_9'' => \n  array (\n    ''input_text_9_input_id'' => '''',\n    ''input_text_9_label_text'' => ''Apellido: *'',\n    ''input_text_9_input_name'' => ''surname'',\n    ''input_text_9_input_value'' => '''',\n    ''input_text_9_input_maxlength'' => ''150'',\n    ''input_text_9_input_size'' => ''30'',\n    ''input_text_9_input_class'' => '''',\n    ''input_text_9_input_title'' => '''',\n    ''input_text_9_label_over'' => ''0'',\n    ''input_text_9_hide_label'' => ''0'',\n    ''input_text_9_multiline_start'' => ''0'',\n    ''input_text_9_multiline_add'' => ''0'',\n    ''input_text_9_validations'' => ''required'',\n    ''input_text_9_instructions'' => '''',\n    ''input_text_9_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''text'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_2'' => \n  array (\n    ''input_text_2_input_id'' => '''',\n    ''input_text_2_label_text'' => ''Organización: *'',\n    ''input_text_2_input_name'' => ''organization'',\n    ''input_text_2_input_value'' => '''',\n    ''input_text_2_input_maxlength'' => ''150'',\n    ''input_text_2_input_size'' => ''30'',\n    ''input_text_2_input_class'' => '''',\n    ''input_text_2_input_title'' => '''',\n    ''input_text_2_label_over'' => ''0'',\n    ''input_text_2_hide_label'' => ''0'',\n    ''input_text_2_multiline_start'' => ''0'',\n    ''input_text_2_multiline_add'' => ''0'',\n    ''input_text_2_validations'' => ''required'',\n    ''input_text_2_instructions'' => '''',\n    ''input_text_2_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''text'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_3'' => \n  array (\n    ''input_text_3_input_id'' => '''',\n    ''input_text_3_label_text'' => ''Proyecto: *'',\n    ''input_text_3_input_name'' => ''project'',\n    ''input_text_3_input_value'' => '''',\n    ''input_text_3_input_maxlength'' => ''150'',\n    ''input_text_3_input_size'' => ''30'',\n    ''input_text_3_input_class'' => '''',\n    ''input_text_3_input_title'' => '''',\n    ''input_text_3_label_over'' => ''0'',\n    ''input_text_3_hide_label'' => ''0'',\n    ''input_text_3_multiline_start'' => ''0'',\n    ''input_text_3_multiline_add'' => ''0'',\n    ''input_text_3_validations'' => ''required'',\n    ''input_text_3_instructions'' => '''',\n    ''input_text_3_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''text'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_4'' => \n  array (\n    ''input_text_4_input_id'' => '''',\n    ''input_text_4_label_text'' => ''Contrato de referencia:'',\n    ''input_text_4_input_name'' => ''reference'',\n    ''input_text_4_input_value'' => '''',\n    ''input_text_4_input_maxlength'' => ''150'',\n    ''input_text_4_input_size'' => ''30'',\n    ''input_text_4_input_class'' => '''',\n    ''input_text_4_input_title'' => '''',\n    ''input_text_4_label_over'' => ''0'',\n    ''input_text_4_hide_label'' => ''0'',\n    ''input_text_4_multiline_start'' => ''0'',\n    ''input_text_4_multiline_add'' => ''0'',\n    ''input_text_4_validations'' => '''',\n    ''input_text_4_instructions'' => '''',\n    ''input_text_4_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''text'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_5'' => \n  array (\n    ''input_radio_5_input_id'' => '''',\n    ''input_radio_5_label_text'' => ''Tema por el cual se genera el reclamo: *'',\n    ''input_radio_5_input_name'' => ''subject'',\n    ''input_radio_5_input_value'' => '''',\n    ''input_radio_5_radios_over'' => ''1'',\n    ''input_radio_5_legend'' => '''',\n    ''input_radio_5_ghost'' => ''1'',\n    ''input_radio_5_ghost_value'' => '''',\n    ''input_radio_5_input_title'' => '''',\n    ''input_radio_5_label_over'' => ''0'',\n    ''input_radio_5_hide_label'' => ''0'',\n    ''input_radio_5_multiline_start'' => ''0'',\n    ''input_radio_5_multiline_add'' => ''0'',\n    ''input_radio_5_enable_dynamic_data'' => ''0'',\n    ''input_radio_5_data_path'' => '''',\n    ''input_radio_5_value_key'' => '''',\n    ''input_radio_5_text_key'' => '''',\n    ''input_radio_5_options'' => ''Adquisiciones en curso=Adquisiciones en curso\r\nGestion de contrato=Gestion de contrato\r\nPagos=Pagos\r\nOtros=Otros'',\n    ''input_radio_5_validations'' => ''required'',\n    ''input_radio_5_instructions'' => '''',\n    ''input_radio_5_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''radio'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_6'' => \n  array (\n    ''input_text_6_input_id'' => '''',\n    ''input_text_6_label_text'' => ''Correo electrónico: *'',\n    ''input_text_6_input_name'' => ''email'',\n    ''input_text_6_input_value'' => '''',\n    ''input_text_6_input_maxlength'' => ''150'',\n    ''input_text_6_input_size'' => ''30'',\n    ''input_text_6_input_class'' => '''',\n    ''input_text_6_input_title'' => '''',\n    ''input_text_6_label_over'' => ''0'',\n    ''input_text_6_hide_label'' => ''0'',\n    ''input_text_6_multiline_start'' => ''0'',\n    ''input_text_6_multiline_add'' => ''0'',\n    ''input_text_6_validations'' => ''required,email'',\n    ''input_text_6_instructions'' => '''',\n    ''input_text_6_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''text'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_7'' => \n  array (\n    ''input_text_7_input_id'' => '''',\n    ''input_text_7_label_text'' => ''Teléfono:'',\n    ''input_text_7_input_name'' => ''phone'',\n    ''input_text_7_input_value'' => '''',\n    ''input_text_7_input_maxlength'' => ''150'',\n    ''input_text_7_input_size'' => ''30'',\n    ''input_text_7_input_class'' => '''',\n    ''input_text_7_input_title'' => '''',\n    ''input_text_7_label_over'' => ''0'',\n    ''input_text_7_hide_label'' => ''0'',\n    ''input_text_7_multiline_start'' => ''0'',\n    ''input_text_7_multiline_add'' => ''0'',\n    ''input_text_7_validations'' => '''',\n    ''input_text_7_instructions'' => '''',\n    ''input_text_7_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''text'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_8'' => \n  array (\n    ''input_textarea_8_input_id'' => '''',\n    ''input_textarea_8_label_text'' => ''Mensaje: *'',\n    ''input_textarea_8_input_name'' => ''message'',\n    ''input_textarea_8_input_value'' => '''',\n    ''input_textarea_8_input_class'' => '''',\n    ''input_textarea_8_input_title'' => '''',\n    ''input_textarea_8_label_over'' => ''0'',\n    ''input_textarea_8_hide_label'' => ''0'',\n    ''input_textarea_8_input_cols'' => ''45'',\n    ''input_textarea_8_input_rows'' => ''12'',\n    ''input_textarea_8_wysiwyg_editor'' => ''0'',\n    ''input_textarea_8_editor_buttons'' => ''1'',\n    ''input_textarea_8_editor_width'' => ''400'',\n    ''input_textarea_8_editor_height'' => ''200'',\n    ''input_textarea_8_multiline_start'' => ''0'',\n    ''input_textarea_8_multiline_add'' => ''0'',\n    ''input_textarea_8_validations'' => ''required'',\n    ''input_textarea_8_instructions'' => '''',\n    ''input_textarea_8_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''textarea'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_10'' => \n  array (\n    ''input_submit_10_input_id'' => '''',\n    ''input_submit_10_input_name'' => ''input_submit_10'',\n    ''input_submit_10_input_value'' => ''Enviar'',\n    ''input_submit_10_input_class'' => ''btn btn-large'',\n    ''input_submit_10_button_type'' => ''submit'',\n    ''input_submit_10_button_align'' => ''right'',\n    ''input_submit_10_back_button'' => ''0'',\n    ''input_submit_10_reset_button'' => ''0'',\n    ''input_submit_10_back_button_value'' => ''Back'',\n    ''input_submit_10_reset_button_value'' => ''Reset'',\n    ''input_submit_10_multiline_start'' => ''0'',\n    ''input_submit_10_multiline_add'' => ''0'',\n    ''tag'' => ''input'',\n    ''type'' => ''submit'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_13'' => \n  array (\n    ''input_container_13_area_label'' => ''Container #13'',\n    ''input_container_13_collapsed'' => ''0'',\n    ''input_container_13_container_type'' => '''',\n    ''input_container_13_container_class'' => '''',\n    ''input_container_13_start_code'' => ''</div>\r\n</fieldset>'',\n    ''input_container_13_end_code'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''container'',\n    ''container_id'' => ''0'',\n  ),\n)', 'YToxOntzOjY6ImV2ZW50cyI7YToyOntzOjQ6ImxvYWQiO2E6MTp7czo3OiJhY3Rpb25zIjthOjE6e3M6MjA6ImNmYWN0aW9uX3Nob3dfaHRtbF8wIjtzOjA6IiI7fX1zOjY6InN1Ym1pdCI7YToxOntzOjc6ImFjdGlvbnMiO2E6MTp7czozNzoiY2ZhY3Rpb25fYXV0b19zZXJ2ZXJzaWRlX3ZhbGlkYXRpb25fMiI7YToxOntzOjY6ImV2ZW50cyI7YToyOntzOjUwOiJjZmFjdGlvbmV2ZW50X2F1dG9fc2VydmVyc2lkZV92YWxpZGF0aW9uXzJfc3VjY2VzcyI7YToxOntzOjc6ImFjdGlvbnMiO2E6Mzp7czoxODoiY2ZhY3Rpb25fZGJfc2F2ZV82IjtzOjA6IiI7czoxNjoiY2ZhY3Rpb25fZW1haWxfNCI7czowOiIiO3M6MzE6ImNmYWN0aW9uX3Nob3dfdGhhbmtzX21lc3NhZ2VfMTAiO3M6MDoiIjt9fXM6NDc6ImNmYWN0aW9uZXZlbnRfYXV0b19zZXJ2ZXJzaWRlX3ZhbGlkYXRpb25fMl9mYWlsIjthOjE6e3M6NzoiYWN0aW9ucyI7YToxOntzOjIxOiJjZmFjdGlvbl9ldmVudF9sb29wXzMiO3M6MDoiIjt9fX19fX19fQ==', '{"form_mode":"advanced","form_method":"post","auto_detect_settings":"1","load_files":"1","tight_layout":"1","action_url":"","form_tag_attach":"","add_form_tags":"1","relative_url":"1","dynamic_files":"0","show_top_errors":"1","datepicker_config":"","datepicker_type":"0","datepicker_moo_style":"datepicker_dashboard","enable_jsvalidation":"1","jsvalidation_errors":"1","jsvalidation_theme":"classic","jsvalidation_lang":"es","jsvalidation_showErrors":"0","jsvalidation_errorsLocation":"1","adminview_actions":"","dataview_actions":"","app_exclusive":"0"}', 1, ''),
+(3, 'trabajo', 1, '<div style="margin:0 auto;width:60%" class="well">\r\n<fieldset>\r\n<legend>Oportunidades de consultoría individual</legend>\r\n<p style="text-align:right"><i>* Campos requeridos</i></p><div class="ccms_form_element cfdiv_text" id="name1_container_div" style=""><label>Apellido, Nombre *</label><input maxlength="150" size="30" class=" validate[''required'']" title="" type="text" value="" name="name" />\n<div class="clear"></div><div id="error-message-name"></div></div><div class="ccms_form_element cfdiv_text" id="cuit_cuil_cdi1_container_div" style=""><label>CUIT/CUIL/CDI: *</label><input maxlength="15" size="30" class=" validate[''number'']" title="" type="text" value="" name="CUIT_CUIL_CDI" />\n<div class="small-message">Ingrese números sin espacios ni guiones</div><div class="clear"></div><div id="error-message-CUIT_CUIL_CDI"></div></div><div class="ccms_form_element cfdiv_text" id="address1_container_div" style=""><label>Dirección: *</label><input maxlength="150" size="30" class=" validate[''required'']" title="" type="text" value="" name="address" />\n<div class="clear"></div><div id="error-message-address"></div></div><div class="ccms_form_element cfdiv_text" id="phone1_container_div" style=""><label>Teléfono:</label><input maxlength="150" size="30" class="" title="" type="text" value="" name="phone" />\n<div class="clear"></div><div id="error-message-phone"></div></div><div class="ccms_form_element cfdiv_text" id="email1_container_div" style=""><label>Correo electrónico: *</label><input maxlength="150" size="30" class=" validate[''required'',''email'']" title="" type="text" value="" name="email" />\n<div class="clear"></div><div id="error-message-email"></div></div><hr/><br/><div class="ccms_form_element cfdiv_file" id="attachment1_container_div" style=""><label>Anexar CV: *</label><input class=" validate[''required'']" title="" type="file" name="attachment" />\n<div class="clear"></div><div id="error-message-attachment"></div></div><div class="ccms_form_element cfdiv_submit" id="input_submit_21_container_div" style="text-align:right"><input name="input_submit_2" class="btn btn-large" value="Enviar" type="submit" />\n<div class="clear"></div><div id="error-message-input_submit_2"></div></div></div>\r\n</fieldset><div class="ccms_form_element cfdiv_empty" id="empty_container_div" style=""><div class="clear"></div><div id="error-message-empty"></div></div>', 'array (\n  ''field_15'' => \n  array (\n    ''input_container_15_area_label'' => ''Container #15'',\n    ''input_container_15_collapsed'' => ''0'',\n    ''input_container_15_container_type'' => ''custom'',\n    ''input_container_15_container_class'' => '''',\n    ''input_container_15_start_code'' => ''<div style="margin:0 auto;width:60%" class="well">\r\n<fieldset>\r\n<legend>Oportunidades de consultoría individual</legend>\r\n<p style="text-align:right"><i>* Campos requeridos</i></p>'',\n    ''input_container_15_end_code'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''container'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_1'' => \n  array (\n    ''input_text_1_input_id'' => '''',\n    ''input_text_1_label_text'' => ''Apellido, Nombre *'',\n    ''input_text_1_input_name'' => ''name'',\n    ''input_text_1_input_value'' => '''',\n    ''input_text_1_input_maxlength'' => ''150'',\n    ''input_text_1_input_size'' => ''30'',\n    ''input_text_1_input_class'' => '''',\n    ''input_text_1_input_title'' => '''',\n    ''input_text_1_label_over'' => ''0'',\n    ''input_text_1_hide_label'' => ''0'',\n    ''input_text_1_multiline_start'' => ''0'',\n    ''input_text_1_multiline_add'' => ''0'',\n    ''input_text_1_validations'' => ''required'',\n    ''input_text_1_instructions'' => '''',\n    ''input_text_1_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''text'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_3'' => \n  array (\n    ''input_text_3_input_id'' => '''',\n    ''input_text_3_label_text'' => ''CUIT/CUIL/CDI: *'',\n    ''input_text_3_input_name'' => ''CUIT_CUIL_CDI'',\n    ''input_text_3_input_value'' => '''',\n    ''input_text_3_input_maxlength'' => ''15'',\n    ''input_text_3_input_size'' => ''30'',\n    ''input_text_3_input_class'' => '''',\n    ''input_text_3_input_title'' => '''',\n    ''input_text_3_label_over'' => ''0'',\n    ''input_text_3_hide_label'' => ''0'',\n    ''input_text_3_multiline_start'' => ''0'',\n    ''input_text_3_multiline_add'' => ''0'',\n    ''input_text_3_validations'' => ''number'',\n    ''input_text_3_instructions'' => ''Ingrese números sin espacios ni guiones'',\n    ''input_text_3_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''text'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_6'' => \n  array (\n    ''input_text_6_input_id'' => '''',\n    ''input_text_6_label_text'' => ''Dirección: *'',\n    ''input_text_6_input_name'' => ''address'',\n    ''input_text_6_input_value'' => '''',\n    ''input_text_6_input_maxlength'' => ''150'',\n    ''input_text_6_input_size'' => ''30'',\n    ''input_text_6_input_class'' => '''',\n    ''input_text_6_input_title'' => '''',\n    ''input_text_6_label_over'' => ''0'',\n    ''input_text_6_hide_label'' => ''0'',\n    ''input_text_6_multiline_start'' => ''0'',\n    ''input_text_6_multiline_add'' => ''0'',\n    ''input_text_6_validations'' => ''required'',\n    ''input_text_6_instructions'' => '''',\n    ''input_text_6_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''text'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_7'' => \n  array (\n    ''input_text_7_input_id'' => '''',\n    ''input_text_7_label_text'' => ''Teléfono:'',\n    ''input_text_7_input_name'' => ''phone'',\n    ''input_text_7_input_value'' => '''',\n    ''input_text_7_input_maxlength'' => ''150'',\n    ''input_text_7_input_size'' => ''30'',\n    ''input_text_7_input_class'' => '''',\n    ''input_text_7_input_title'' => '''',\n    ''input_text_7_label_over'' => ''0'',\n    ''input_text_7_hide_label'' => ''0'',\n    ''input_text_7_multiline_start'' => ''0'',\n    ''input_text_7_multiline_add'' => ''0'',\n    ''input_text_7_validations'' => '''',\n    ''input_text_7_instructions'' => '''',\n    ''input_text_7_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''text'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_8'' => \n  array (\n    ''input_text_8_input_id'' => '''',\n    ''input_text_8_label_text'' => ''Correo electrónico: *'',\n    ''input_text_8_input_name'' => ''email'',\n    ''input_text_8_input_value'' => '''',\n    ''input_text_8_input_maxlength'' => ''150'',\n    ''input_text_8_input_size'' => ''30'',\n    ''input_text_8_input_class'' => '''',\n    ''input_text_8_input_title'' => '''',\n    ''input_text_8_label_over'' => ''0'',\n    ''input_text_8_hide_label'' => ''0'',\n    ''input_text_8_multiline_start'' => ''0'',\n    ''input_text_8_multiline_add'' => ''0'',\n    ''input_text_8_validations'' => ''required,email'',\n    ''input_text_8_instructions'' => '''',\n    ''input_text_8_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''text'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_14'' => \n  array (\n    ''input_container_14_area_label'' => ''Container #14'',\n    ''input_container_14_collapsed'' => ''0'',\n    ''input_container_14_container_type'' => ''custom'',\n    ''input_container_14_container_class'' => '''',\n    ''input_container_14_start_code'' => ''<hr/><br/>'',\n    ''input_container_14_end_code'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''container'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_13'' => \n  array (\n    ''input_file_13_input_id'' => '''',\n    ''input_file_13_label_text'' => ''Anexar CV: *'',\n    ''input_file_13_input_name'' => ''attachment'',\n    ''input_file_13_input_class'' => '''',\n    ''input_file_13_input_title'' => '''',\n    ''input_file_13_label_over'' => ''0'',\n    ''input_file_13_hide_label'' => ''0'',\n    ''input_file_13_ghost'' => ''0'',\n    ''input_file_13_ghost_value'' => '''',\n    ''input_file_13_multiline_start'' => ''0'',\n    ''input_file_13_multiline_add'' => ''0'',\n    ''input_file_13_validations'' => ''required'',\n    ''input_file_13_instructions'' => '''',\n    ''input_file_13_tooltip'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''file'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_2'' => \n  array (\n    ''input_submit_2_input_id'' => '''',\n    ''input_submit_2_input_name'' => ''input_submit_2'',\n    ''input_submit_2_input_value'' => ''Enviar'',\n    ''input_submit_2_input_class'' => ''btn btn-large'',\n    ''input_submit_2_button_type'' => ''submit'',\n    ''input_submit_2_button_align'' => ''right'',\n    ''input_submit_2_back_button'' => ''0'',\n    ''input_submit_2_reset_button'' => ''0'',\n    ''input_submit_2_back_button_value'' => ''Back'',\n    ''input_submit_2_reset_button_value'' => ''Reset'',\n    ''input_submit_2_multiline_start'' => ''0'',\n    ''input_submit_2_multiline_add'' => ''0'',\n    ''tag'' => ''input'',\n    ''type'' => ''submit'',\n    ''container_id'' => ''0'',\n  ),\n  ''field_16'' => \n  array (\n    ''input_container_16_area_label'' => ''Container #16'',\n    ''input_container_16_collapsed'' => ''0'',\n    ''input_container_16_container_type'' => ''custom'',\n    ''input_container_16_container_class'' => '''',\n    ''input_container_16_start_code'' => ''</div>\r\n</fieldset>'',\n    ''input_container_16_end_code'' => '''',\n    ''tag'' => ''input'',\n    ''type'' => ''container'',\n    ''container_id'' => ''0'',\n  ),\n)', 'YToxOntzOjY6ImV2ZW50cyI7YToyOntzOjQ6ImxvYWQiO2E6MTp7czo3OiJhY3Rpb25zIjthOjE6e3M6MjA6ImNmYWN0aW9uX3Nob3dfaHRtbF80IjtzOjA6IiI7fX1zOjY6InN1Ym1pdCI7YToxOntzOjc6ImFjdGlvbnMiO2E6MTp7czozNzoiY2ZhY3Rpb25fYXV0b19zZXJ2ZXJzaWRlX3ZhbGlkYXRpb25fNiI7YToxOntzOjY6ImV2ZW50cyI7YTo0OntzOjUwOiJjZmFjdGlvbmV2ZW50X2F1dG9fc2VydmVyc2lkZV92YWxpZGF0aW9uXzZfc3VjY2VzcyI7YToxOntzOjc6ImFjdGlvbnMiO2E6NTp7czoyNToiY2ZhY3Rpb25faGFuZGxlX2FycmF5c18xNiI7czowOiIiO3M6MjQ6ImNmYWN0aW9uX3VwbG9hZF9maWxlc18xNCI7YToxOntzOjY6ImV2ZW50cyI7YToyOntzOjM3OiJjZmFjdGlvbmV2ZW50X3VwbG9hZF9maWxlc18xNF9zdWNjZXNzIjtzOjA6IiI7czozNDoiY2ZhY3Rpb25ldmVudF91cGxvYWRfZmlsZXNfMTRfZmFpbCI7YToxOntzOjc6ImFjdGlvbnMiO2E6MTp7czoyMjoiY2ZhY3Rpb25fZXZlbnRfbG9vcF8xNSI7czowOiIiO319fX1zOjE4OiJjZmFjdGlvbl9kYl9zYXZlXzgiO3M6MDoiIjtzOjE2OiJjZmFjdGlvbl9lbWFpbF85IjtzOjA6IiI7czozMToiY2ZhY3Rpb25fc2hvd190aGFua3NfbWVzc2FnZV8xMCI7czowOiIiO319czozNzoiY2ZhY3Rpb25ldmVudF91cGxvYWRfZmlsZXNfMTRfc3VjY2VzcyI7czowOiIiO3M6MzQ6ImNmYWN0aW9uZXZlbnRfdXBsb2FkX2ZpbGVzXzE0X2ZhaWwiO3M6MDoiIjtzOjQ3OiJjZmFjdGlvbmV2ZW50X2F1dG9fc2VydmVyc2lkZV92YWxpZGF0aW9uXzZfZmFpbCI7YToxOntzOjc6ImFjdGlvbnMiO2E6MTp7czoyMToiY2ZhY3Rpb25fZXZlbnRfbG9vcF83IjtzOjA6IiI7fX19fX19fX0=', '{"form_mode":"advanced","form_method":"post","auto_detect_settings":"1","load_files":"1","tight_layout":"1","action_url":"","form_tag_attach":"enctype=\\"multipart\\/form-data\\"","add_form_tags":"1","relative_url":"1","dynamic_files":"0","show_top_errors":"1","datepicker_config":"","datepicker_type":"0","datepicker_moo_style":"datepicker_dashboard","enable_jsvalidation":"1","jsvalidation_errors":"1","jsvalidation_theme":"classic","jsvalidation_lang":"es","jsvalidation_showErrors":"0","jsvalidation_errorsLocation":"1","adminview_actions":"","dataview_actions":"","app_exclusive":"0","dataview_fields_j_chronoforms_data_proveedores":"cf_created,cuit,email,attachment"}', 1, '');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_chronoforms_data_proveedores`
+-- Table structure for table `j_chronoforms_data_proveedores`
 --
 
 CREATE TABLE IF NOT EXISTS `j_chronoforms_data_proveedores` (
@@ -378,7 +396,7 @@ CREATE TABLE IF NOT EXISTS `j_chronoforms_data_proveedores` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
--- Volcado de datos para la tabla `j_chronoforms_data_proveedores`
+-- Dumping data for table `j_chronoforms_data_proveedores`
 --
 
 INSERT INTO `j_chronoforms_data_proveedores` (`cf_id`, `cf_uid`, `cf_created`, `cf_modified`, `name`, `cuit`, `categories`, `address`, `phone`, `email`, `webpage`, `contacts`, `attachment`) VALUES
@@ -397,7 +415,7 @@ INSERT INTO `j_chronoforms_data_proveedores` (`cf_id`, `cf_uid`, `cf_created`, `
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_chronoforms_data_reclamos`
+-- Table structure for table `j_chronoforms_data_reclamos`
 --
 
 CREATE TABLE IF NOT EXISTS `j_chronoforms_data_reclamos` (
@@ -417,7 +435,7 @@ CREATE TABLE IF NOT EXISTS `j_chronoforms_data_reclamos` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
--- Volcado de datos para la tabla `j_chronoforms_data_reclamos`
+-- Dumping data for table `j_chronoforms_data_reclamos`
 --
 
 INSERT INTO `j_chronoforms_data_reclamos` (`cf_id`, `cf_uid`, `cf_created`, `name`, `surname`, `organization`, `project`, `reference`, `subject`, `email`, `phone`, `message`) VALUES
@@ -432,7 +450,32 @@ INSERT INTO `j_chronoforms_data_reclamos` (`cf_id`, `cf_uid`, `cf_created`, `nam
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_chronoform_actions`
+-- Table structure for table `j_chronoforms_data_trabajo`
+--
+
+CREATE TABLE IF NOT EXISTS `j_chronoforms_data_trabajo` (
+  `cf_id` int(11) NOT NULL AUTO_INCREMENT,
+  `cf_uid` varchar(255) NOT NULL,
+  `cf_created` datetime NOT NULL,
+  `cf_ipaddress` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `CUIT_CUIL_CDI` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `attachment` varchar(255) NOT NULL,
+  PRIMARY KEY (`cf_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `j_chronoforms_data_trabajo`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `j_chronoform_actions`
 --
 
 CREATE TABLE IF NOT EXISTS `j_chronoform_actions` (
@@ -444,10 +487,10 @@ CREATE TABLE IF NOT EXISTS `j_chronoform_actions` (
   `order` int(11) NOT NULL,
   `content1` longtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=311 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=428 ;
 
 --
--- Volcado de datos para la tabla `j_chronoform_actions`
+-- Dumping data for table `j_chronoform_actions`
 --
 
 INSERT INTO `j_chronoform_actions` (`id`, `chronoform_id`, `type`, `enabled`, `params`, `order`, `content1`) VALUES
@@ -465,12 +508,21 @@ INSERT INTO `j_chronoform_actions` (`id`, `chronoform_id`, `type`, `enabled`, `p
 (281, 2, 'show_thanks_message', 1, '[]', 10, 'Su reclamo ha sido enviado correctamente.</br>\r\nA la brevedad nos pondremos en contacto con usted.\r\n</br></br>\r\nEste es el mail que nos suministró: {email}'),
 (282, 2, 'event_loop', 1, '{"target_event":"","quit_next":"1"}', 3, ''),
 (283, 2, 'auto_serverside_validation', 1, '{"required":"","not_empty":"","empty":"","alpha":"","alphanumeric":"","digit":"","nodigit":"","number":"","email":"","phone":"","phone_inter":"","url":"","required_error":"This field is required.","not_empty_error":"This field should NOT be empty.","empty_error":"This field should be empty.","alpha_error":"This field should contain alphabetic characters only.","alphanumeric_error":"This field should contain alphabetic characters or digits only.","digit_error":"This field should contain digits only.","nodigit_error":"This field should NOT contain any digits.","number_error":"This field should contain a number.","email_error":"This field should contain an email address.","phone_error":"This field should contain a phone number.","phone_inter_error":"This field should contain an international phone number.","url_error":"This field should contain a URL."}', 2, ''),
-(279, 2, 'db_save', 1, '{"table_name":"j_chronoforms_data_reclamos","model_id":"chronoform_data","save_under_modelid":"0","params_fields":"","ndb_enable":"0","ndb_driver":"mysql","ndb_host":"localhost","ndb_user":"","ndb_password":"","ndb_database":"","ndb_table_name":"","ndb_prefix":"jos_"}', 6, '');
+(279, 2, 'db_save', 1, '{"table_name":"j_chronoforms_data_reclamos","model_id":"chronoform_data","save_under_modelid":"0","params_fields":"","ndb_enable":"0","ndb_driver":"mysql","ndb_host":"localhost","ndb_user":"","ndb_password":"","ndb_database":"","ndb_table_name":"","ndb_prefix":"jos_"}', 6, ''),
+(426, 3, 'event_loop', 1, '{"target_event":"","quit_next":"1"}', 7, ''),
+(427, 3, 'auto_serverside_validation', 1, '{"required":"","not_empty":"","empty":"","alpha":"","alphanumeric":"","digit":"","nodigit":"","number":"","email":"","phone":"","phone_inter":"","url":"","required_error":"This field is required.","not_empty_error":"This field should NOT be empty.","empty_error":"This field should be empty.","alpha_error":"This field should contain alphabetic characters only.","alphanumeric_error":"This field should contain alphabetic characters or digits only.","digit_error":"This field should contain digits only.","nodigit_error":"This field should NOT contain any digits.","number_error":"This field should contain a number.","email_error":"This field should contain an email address.","phone_error":"This field should contain a phone number.","phone_inter_error":"This field should contain an international phone number.","url_error":"This field should contain a URL."}', 6, ''),
+(423, 3, 'db_save', 1, '{"table_name":"j_chronoforms_data_trabajo","model_id":"chronoform_data","save_under_modelid":"0","params_fields":"","ndb_enable":"0","ndb_driver":"mysql","ndb_host":"localhost","ndb_user":"","ndb_password":"","ndb_database":"","ndb_table_name":"","ndb_prefix":"jos_"}', 8, ''),
+(424, 3, 'email', 1, '{"to":"pablo.se.estevez@gmail.com","cc":"","bcc":"","subject":"Mensaje","fromname":"pablo.se.estevez@gmail.com","fromemail":"pablo.se.estevez@gmail.com","replytoname":"","replytoemail":"","dto":"","dcc":"","dbcc":"","dsubject":"","dfromname":"","dfromemail":"","dreplytoname":"","dreplytoemail":"","recordip":"1","attachments":"attachment","sendas":"html","action_label":"","encrypt_enabled":"0","gpg_sec_key":"","replace_nulls":"0"}', 9, '<table cellpadding="5" cellspacing="5" border="0">\r\n\r\n	<tr>\r\n		<td>\r\n			<strong>Nombre o razón social: *</strong>\r\n		</td>\r\n		<td>\r\n			{name}\r\n		</td>\r\n	</tr>\r\n	<tr>\r\n		<td>\r\n			<strong>CUIT: *</strong>\r\n		</td>\r\n		<td>\r\n			{cuit}\r\n		</td>\r\n	</tr>\r\n	<tr>\r\n		<td>\r\n			<strong>Categorías: *</strong>\r\n		</td>\r\n		<td>\r\n			{categories}\r\n		</td>\r\n	</tr>\r\n	<tr>\r\n		<td>\r\n			<strong>Dirección: *</strong>\r\n		</td>\r\n		<td>\r\n			{address}\r\n		</td>\r\n	</tr>\r\n	<tr>\r\n		<td>\r\n			<strong>Teléfono:</strong>\r\n		</td>\r\n		<td>\r\n			{phone}\r\n		</td>\r\n	</tr>\r\n	<tr>\r\n		<td>\r\n			<strong>Correo electrónico: *</strong>\r\n		</td>\r\n		<td>\r\n			{email}\r\n		</td>\r\n	</tr>\r\n	<tr>\r\n		<td>\r\n			<strong>Página web:</strong>\r\n		</td>\r\n		<td>\r\n			{webpage}\r\n		</td>\r\n	</tr>\r\n	<tr>\r\n		<td>\r\n			<strong>Contactos:</strong>\r\n		</td>\r\n		<td>\r\n			{contacts}\r\n		</td>\r\n	</tr>\r\n\r\n	<tr>\r\n		<td>\r\n			<strong>Formulario para firma:</strong>\r\n		</td>\r\n		<td>\r\n			{attachment}\r\n		</td>\r\n	</tr>\r\n\r\n</table>'),
+(425, 3, 'show_thanks_message', 1, '[]', 10, 'El formulario ha sido enviado correctamente.\r\n</br></br>\r\nEste es el mail que nos suministró: {email}'),
+(420, 3, 'handle_arrays', 1, '{"delimiter":",","skipped":"attachment","fields_list":""}', 16, ''),
+(421, 3, 'event_loop', 1, '{"target_event":"","quit_next":"1"}', 15, ''),
+(422, 3, 'upload_files', 1, '{"files":"attachment:doc-docx-pdf","array_fields":"attachment","upload_path":"JOOMLA_PATH\\/images\\/adjuntos-provedores\\/","max_size":"2000","min_size":"0","max_error":"El archivo que intenta adjuntar es demasiado pesado","min_error":"El archivo que intenta adjuntar no es v\\u00e1lido","type_error":"El archivo que intenta adjuntar no es v\\u00e1lido","safe_file_name":"1"}', 14, ''),
+(419, 3, 'show_html', 1, '{"data_republish":"1","display_errors":"1","curly_replacer":"1","load_token":"1","keep_alive":"0","submit_event":"submit","page_number":"1","form_container":""}', 4, '');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_contact_details`
+-- Table structure for table `j_contact_details`
 --
 
 CREATE TABLE IF NOT EXISTS `j_contact_details` (
@@ -528,10 +580,15 @@ CREATE TABLE IF NOT EXISTS `j_contact_details` (
   KEY `idx_xreference` (`xreference`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Dumping data for table `j_contact_details`
+--
+
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_content`
+-- Table structure for table `j_content`
 --
 
 CREATE TABLE IF NOT EXISTS `j_content` (
@@ -577,22 +634,22 @@ CREATE TABLE IF NOT EXISTS `j_content` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
--- Volcado de datos para la tabla `j_content`
+-- Dumping data for table `j_content`
 --
 
 INSERT INTO `j_content` (`id`, `asset_id`, `title`, `alias`, `introtext`, `fulltext`, `state`, `catid`, `created`, `created_by`, `created_by_alias`, `modified`, `modified_by`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `images`, `urls`, `attribs`, `version`, `ordering`, `metakey`, `metadesc`, `access`, `hits`, `metadata`, `featured`, `language`, `xreference`) VALUES
 (1, 36, 'Autoridades', 'autoridades', '<h3>Coordinación General</h3>\r\n<p>C.P.N. José Eduardo Priegue <a class=\\"caption\\" href=\\"images/archivos/cv/CV_JosePriegue.pdf\\" target=\\"_blank\\" title=\\"CV Jose Priegue\\">Curriculum Vitae</a></p>\r\n<p>Asistente: Natalia Tomasello</p>\r\n<p> </p>\r\n<h3>Coord. Monitoreo y Evaluación</h3>\r\n<p>Lic. Silvia Prieri <a class=\\"caption\\" href=\\"images/archivos/cv/CV_SilviaPrieri.doc\\" target=\\"_blank\\" title=\\"CV Silvia Prieri\\">Curriculum Vitae</a></p>\r\n<p>Asistente: Sabrina Corbella</p>\r\n<p> </p>\r\n<h3>Coord. Administración y Finanzas</h3>\r\n<p>Sra. Andrea M. Morales <a class=\\"caption\\" href=\\"images/archivos/cv/CV_AndreaMorales.docx\\" target=\\"_blank\\" title=\\"CV Andrea M. Morales\\">Curriculum Vitae</a></p>\r\n<p>Asistente: Erica Sarquis</p>\r\n<p> </p>\r\n<h3>Coord. Adquisiciones y Contrataciones</h3>\r\n<p>Sr. Alfredo Badoza <a class=\\"caption\\" href=\\"images/archivos/cv/CV_AlfredoBadoza.docx\\" target=\\"_blank\\" title=\\"CV Alfredo Badoza\\">Curriculum Vitae</a></p>\r\n<p>Asistente: Ariel Merlo</p>', '', 1, 8, '2013-06-13 16:51:44', 572, '', '2013-06-29 18:58:07', 572, 0, '0000-00-00 00:00:00', '2013-06-13 16:51:44', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":null,"urlatext":"","targeta":"","urlb":null,"urlbtext":"","targetb":"","urlc":null,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 5, 1, '', '', 1, 67, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(2, 37, 'Misión y Funciones', 'mision-y-funciones', '<p>La Unidad de Financiamiento Internacional de Salud (UFI-S) es una entidad especializada dentro de la estructura del Ministerio de Salud de la Nación (MSAL), cuya misión es la de coordinar los diferentes Programas y Proyectos financiados con préstamos, créditos o donaciones externos y/o en el marco de acuerdos de cooperación técnica con organismos internacionales, interviniendo en la formulación, gestión, supervisión, monitoreo y evaluación de los mismos.</p>\r\n<p>Su conducción operativa se encuentra a cargo del Coordinador General, con rango de Subsecretario, dependiendo de la Secretaría de Coordinación del Ministerio de Salud de la Nación.</p>\r\n<p>Para dar cumplimiento de sus objetivos generales y específicos,  la UFI-S tiene a su cargo cuatro funciones principales vinculadas a la ejecución de proyectos:</p>\r\n<ul>\r\n<li>La gestión de las adquisiciones y contrataciones, incluidos los consultores individuales.</li>\r\n<li>La gestión administrativa, financiera y contable.</li>\r\n<li>La coordinación de monitoreo y evaluación.</li>\r\n<li>El asesoramiento y control legal.</li>\r\n</ul>\r\n<p> </p>', '', 1, 8, '2013-06-13 16:52:23', 572, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2013-06-13 16:52:23', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":null,"urlatext":"","targeta":"","urlb":null,"urlbtext":"","targetb":"","urlc":null,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, '', '', 1, 263, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(2, 37, 'Misión y Funciones', 'mision-y-funciones', '<p>La Unidad de Financiamiento Internacional de Salud (UFI-S) es una entidad especializada dentro de la estructura del Ministerio de Salud de la Nación (MSAL), cuya misión es la de coordinar los diferentes Programas y Proyectos financiados con préstamos, créditos o donaciones externos y/o en el marco de acuerdos de cooperación técnica con organismos internacionales, interviniendo en la formulación, gestión, supervisión, monitoreo y evaluación de los mismos.</p>\r\n<p>Su conducción operativa se encuentra a cargo del Coordinador General, con rango de Subsecretario, dependiendo de la Secretaría de Coordinación del Ministerio de Salud de la Nación.</p>\r\n<p>Para dar cumplimiento de sus objetivos generales y específicos,  la UFI-S tiene a su cargo cuatro funciones principales vinculadas a la ejecución de proyectos:</p>\r\n<ul>\r\n<li>La gestión de las adquisiciones y contrataciones, incluidos los consultores individuales.</li>\r\n<li>La gestión administrativa, financiera y contable.</li>\r\n<li>La coordinación de monitoreo y evaluación.</li>\r\n<li>El asesoramiento y control legal.</li>\r\n</ul>\r\n<p> </p>', '', 1, 8, '2013-06-13 16:52:23', 572, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2013-06-13 16:52:23', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":null,"urlatext":"","targeta":"","urlb":null,"urlbtext":"","targetb":"","urlc":null,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, '', '', 1, 268, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (3, 39, 'Mecanismo de gestión y lecciones aprendidas', 'mecanismo-de-gestion-y-lecciones-aprendidas', '<p>ufi-s <span class="title">Mecanismo de gestión y <a href="#" target="_blank">lecciones aprendidas </a></span></p>\r\n', '\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla nisi, hendrerit eu purus sed, bibendum elementum orci. Duis luctus interdum felis. Suspendisse pellentesque nibh at lacus fermentum ornare. Etiam condimentum vestibulum lacus. Donec vestibulum iaculis iaculis. Sed molestie consectetur congue. Integer tincidunt sollicitudin lorem. Nullam vitae leo nec nulla rhoncus rhoncus eu eu ipsum. Morbi non justo accumsan, gravida erat vel, fringilla sapien. Sed eu velit ac eros porttitor pharetra. Sed sit amet risus et ipsum vestibulum posuere.</p>', 1, 9, '2013-06-13 16:54:23', 572, '', '2013-07-27 18:36:45', 572, 0, '0000-00-00 00:00:00', '2013-06-13 16:54:23', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":null,"urlatext":"","targeta":"","urlb":null,"urlbtext":"","targetb":"","urlc":null,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 9, 0, '', '', 1, 24, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (5, 55, 'Contactos', 'contactos', '<div class="content">\r\n<p><strong>M</strong><strong>inisterio de Salud de la Nación</strong><br /> Teléfono <strong>(54 11) 4379-900</strong></p>\r\n<p>UFI-SALUD<br /> Teléfonos:<strong> (54 11) 4372-3733 // 4382-2840 // 4384-6997 // 4383-4361 // 4372-3832<br /> </strong>Fax: <strong>(54 11) 4372-3733 Int. 310<br /> </strong></p>\r\n<p>Oficinas en Av. 9 de Julio 1925 4to. Piso, Oficina 407<br /> (C1073CABA) Ciudad Aut. de Buenos Aires,<br /> Republica Argentina<br /> <br /> Coordinación General: <strong>Int. 206</strong></p>\r\n<p>Coordinación de Adquisiciones y Contrataciones: <strong>Int. 248</strong></p>\r\n<p>Coordinación de Administración y Finanzas: <strong>Int. 213</strong></p>\r\n<p>Coordinación de Monitoreo y Evaluación: <strong>Int. 260</strong></p>\r\n<p>Mesa de entrada: <strong>Int. 1001</strong><br /> <strong><br /> </strong><strong><strong>Oficinas en Rivadavia 875 4to. Piso<br /> (C1073CABA) Ciudad Aut. de Buenos Aires<br /> Republica Argentina</strong></strong><br /> Recursos Humanos: <strong>Int. 203 </strong><br /> Informatica: <strong>Int. 222 - 265</strong></p>\r\n</div>', '', 1, 22, '2013-06-15 23:02:09', 572, '', '0000-00-00 00:00:00', 0, 572, '2013-07-27 01:57:19', '2013-06-15 23:02:09', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":null,"urlatext":"","targeta":"","urlb":null,"urlbtext":"","targetb":"","urlc":null,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 1, '', '', 1, 77, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (6, 0, 'Portada', 'portada', '<p>El Estado Nacional, a través del Ministerio de Salud, implementa Programas y Proyectos de salud pública, en algunos casos, con la asistencia financiera de los Organismos Internacionales de Crédito.</p>\r\n<p>El Ministerio de Salud, determina las políticas fundamentales sobre las cuales se diseñan y elaboran estos programas, reforzando el rol del Estado en sus funciones de vigilancia de la salud, planificación estratégica, priorización del financiamiento, investigación, regulación, fiscalización, y monitoreo.</p>\r\n<p>La Unidad de Financiamiento Internacional de Salud (UFI-S) es una entidad especializada dentro de la estructura del Ministerio de Salud de la Nación (MSAL), cuya misión es la de coordinar los diferentes Programas y Proyectos financiados con préstamos, créditos o donaciones externos y/o en el marco de acuerdos de cooperación técnica con organismos internacionales, interviniendo en la formulación, gestión, supervisión, monitoreo y evaluación de los mismos.</p>', '', -2, 2, '2013-07-25 03:09:00', 572, '', '0000-00-00 00:00:00', 0, 572, '2013-07-27 01:55:55', '2013-07-25 03:09:00', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":null,"urlatext":"","targeta":"","urlb":null,"urlbtext":"","targetb":"","urlc":null,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(7, 57, 'Portada', 'portada', '<h3>Unidad de Financiamiento Internacional de Salud</h3>\r\n<p style="text-align: justify;">El Estado Nacional, a través del Ministerio de Salud, implementa Programas y Proyectos de salud pública, en algunos casos, con la asistencia financiera de los Organismos Internacionales de Crédito.</p>\r\n<p style="text-align: justify;">El Ministerio de Salud, determina las políticas fundamentales sobre las cuales se diseñan y elaboran estos programas, reforzando el rol del Estado en sus funciones de vigilancia de la salud, planificación estratégica, priorización del financiamiento, investigación, regulación, fiscalización, y monitoreo.</p>\r\n<p style="text-align: justify;">La Unidad de Financiamiento Internacional de Salud (UFI-S) es una entidad especializada dentro de la estructura del Ministerio de Salud de la Nación (MSAL), cuya misión es la de coordinar los diferentes Programas y Proyectos financiados con préstamos, créditos o donaciones externos y/o en el marco de acuerdos de cooperación técnica con organismos internacionales, interviniendo en la formulación, gestión, supervisión, monitoreo y evaluación de los mismos.</p>\r\n<p> </p>', '', 1, 22, '2013-07-25 03:09:26', 572, '', '2013-07-25 23:40:55', 572, 0, '0000-00-00 00:00:00', '2013-07-25 03:09:26', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":null,"urlatext":"","targeta":"","urlb":null,"urlbtext":"","targetb":"","urlc":null,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 8, 0, '', '', 1, 85, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(7, 57, 'Portada', 'portada', '<h3>Unidad de Financiamiento Internacional de Salud</h3>\r\n<p style="text-align: justify;">El Estado Nacional, a través del Ministerio de Salud, implementa Programas y Proyectos de salud pública, en algunos casos, con la asistencia financiera de los Organismos Internacionales de Crédito.</p>\r\n<p style="text-align: justify;">El Ministerio de Salud, determina las políticas fundamentales sobre las cuales se diseñan y elaboran estos programas, reforzando el rol del Estado en sus funciones de vigilancia de la salud, planificación estratégica, priorización del financiamiento, investigación, regulación, fiscalización, y monitoreo.</p>\r\n<p style="text-align: justify;">La Unidad de Financiamiento Internacional de Salud (UFI-S) es una entidad especializada dentro de la estructura del Ministerio de Salud de la Nación (MSAL), cuya misión es la de coordinar los diferentes Programas y Proyectos financiados con préstamos, créditos o donaciones externos y/o en el marco de acuerdos de cooperación técnica con organismos internacionales, interviniendo en la formulación, gestión, supervisión, monitoreo y evaluación de los mismos.</p>\r\n<p> </p>', '', 1, 22, '2013-07-25 03:09:26', 572, '', '2013-07-25 23:40:55', 572, 0, '0000-00-00 00:00:00', '2013-07-25 03:09:26', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":null,"urlatext":"","targeta":"","urlb":null,"urlbtext":"","targetb":"","urlc":null,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 8, 0, '', '', 1, 173, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (8, 58, 'Test', 'test', '<p>test</p>', '', 1, 18, '2013-07-27 02:00:08', 572, '', '2013-07-27 02:00:12', 572, 0, '0000-00-00 00:00:00', '2013-07-27 02:00:08', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":null,"urlatext":"","targeta":"","urlb":null,"urlbtext":"","targetb":"","urlc":null,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, '', '', 1, 1, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', '');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_content_frontpage`
+-- Table structure for table `j_content_frontpage`
 --
 
 CREATE TABLE IF NOT EXISTS `j_content_frontpage` (
@@ -601,10 +658,15 @@ CREATE TABLE IF NOT EXISTS `j_content_frontpage` (
   PRIMARY KEY (`content_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `j_content_frontpage`
+--
+
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_content_rating`
+-- Table structure for table `j_content_rating`
 --
 
 CREATE TABLE IF NOT EXISTS `j_content_rating` (
@@ -615,10 +677,15 @@ CREATE TABLE IF NOT EXISTS `j_content_rating` (
   PRIMARY KEY (`content_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `j_content_rating`
+--
+
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_core_log_searches`
+-- Table structure for table `j_core_log_searches`
 --
 
 CREATE TABLE IF NOT EXISTS `j_core_log_searches` (
@@ -626,10 +693,15 @@ CREATE TABLE IF NOT EXISTS `j_core_log_searches` (
   `hits` int(10) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `j_core_log_searches`
+--
+
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_extensions`
+-- Table structure for table `j_extensions`
 --
 
 CREATE TABLE IF NOT EXISTS `j_extensions` (
@@ -657,7 +729,7 @@ CREATE TABLE IF NOT EXISTS `j_extensions` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10016 ;
 
 --
--- Volcado de datos para la tabla `j_extensions`
+-- Dumping data for table `j_extensions`
 --
 
 INSERT INTO `j_extensions` (`extension_id`, `name`, `type`, `element`, `folder`, `client_id`, `enabled`, `access`, `protected`, `manifest_cache`, `params`, `custom_data`, `system_data`, `checked_out`, `checked_out_time`, `ordering`, `state`) VALUES
@@ -807,7 +879,7 @@ INSERT INTO `j_extensions` (`extension_id`, `name`, `type`, `element`, `folder`,
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_finder_filters`
+-- Table structure for table `j_finder_filters`
 --
 
 CREATE TABLE IF NOT EXISTS `j_finder_filters` (
@@ -829,7 +901,7 @@ CREATE TABLE IF NOT EXISTS `j_finder_filters` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- Volcado de datos para la tabla `j_finder_filters`
+-- Dumping data for table `j_finder_filters`
 --
 
 INSERT INTO `j_finder_filters` (`filter_id`, `title`, `alias`, `state`, `created`, `created_by`, `created_by_alias`, `modified`, `modified_by`, `checked_out`, `checked_out_time`, `map_count`, `data`, `params`) VALUES
@@ -838,7 +910,7 @@ INSERT INTO `j_finder_filters` (`filter_id`, `title`, `alias`, `state`, `created
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_finder_links`
+-- Table structure for table `j_finder_links`
 --
 
 CREATE TABLE IF NOT EXISTS `j_finder_links` (
@@ -871,7 +943,7 @@ CREATE TABLE IF NOT EXISTS `j_finder_links` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=30 ;
 
 --
--- Volcado de datos para la tabla `j_finder_links`
+-- Dumping data for table `j_finder_links`
 --
 
 INSERT INTO `j_finder_links` (`link_id`, `url`, `route`, `title`, `description`, `indexdate`, `md5sum`, `published`, `state`, `access`, `language`, `publish_start_date`, `publish_end_date`, `start_date`, `end_date`, `list_price`, `sale_price`, `type_id`, `object`) VALUES
@@ -910,7 +982,7 @@ INSERT INTO `j_finder_links` (`link_id`, `url`, `route`, `title`, `description`,
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_finder_links_terms0`
+-- Table structure for table `j_finder_links_terms0`
 --
 
 CREATE TABLE IF NOT EXISTS `j_finder_links_terms0` (
@@ -923,7 +995,7 @@ CREATE TABLE IF NOT EXISTS `j_finder_links_terms0` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `j_finder_links_terms0`
+-- Dumping data for table `j_finder_links_terms0`
 --
 
 INSERT INTO `j_finder_links_terms0` (`link_id`, `term_id`, `weight`) VALUES
@@ -1209,7 +1281,7 @@ INSERT INTO `j_finder_links_terms0` (`link_id`, `term_id`, `weight`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_finder_links_terms1`
+-- Table structure for table `j_finder_links_terms1`
 --
 
 CREATE TABLE IF NOT EXISTS `j_finder_links_terms1` (
@@ -1222,7 +1294,7 @@ CREATE TABLE IF NOT EXISTS `j_finder_links_terms1` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `j_finder_links_terms1`
+-- Dumping data for table `j_finder_links_terms1`
 --
 
 INSERT INTO `j_finder_links_terms1` (`link_id`, `term_id`, `weight`) VALUES
@@ -1235,7 +1307,7 @@ INSERT INTO `j_finder_links_terms1` (`link_id`, `term_id`, `weight`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_finder_links_terms2`
+-- Table structure for table `j_finder_links_terms2`
 --
 
 CREATE TABLE IF NOT EXISTS `j_finder_links_terms2` (
@@ -1248,7 +1320,7 @@ CREATE TABLE IF NOT EXISTS `j_finder_links_terms2` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `j_finder_links_terms2`
+-- Dumping data for table `j_finder_links_terms2`
 --
 
 INSERT INTO `j_finder_links_terms2` (`link_id`, `term_id`, `weight`) VALUES
@@ -1372,7 +1444,7 @@ INSERT INTO `j_finder_links_terms2` (`link_id`, `term_id`, `weight`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_finder_links_terms3`
+-- Table structure for table `j_finder_links_terms3`
 --
 
 CREATE TABLE IF NOT EXISTS `j_finder_links_terms3` (
@@ -1385,7 +1457,7 @@ CREATE TABLE IF NOT EXISTS `j_finder_links_terms3` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `j_finder_links_terms3`
+-- Dumping data for table `j_finder_links_terms3`
 --
 
 INSERT INTO `j_finder_links_terms3` (`link_id`, `term_id`, `weight`) VALUES
@@ -1402,7 +1474,7 @@ INSERT INTO `j_finder_links_terms3` (`link_id`, `term_id`, `weight`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_finder_links_terms4`
+-- Table structure for table `j_finder_links_terms4`
 --
 
 CREATE TABLE IF NOT EXISTS `j_finder_links_terms4` (
@@ -1415,7 +1487,7 @@ CREATE TABLE IF NOT EXISTS `j_finder_links_terms4` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `j_finder_links_terms4`
+-- Dumping data for table `j_finder_links_terms4`
 --
 
 INSERT INTO `j_finder_links_terms4` (`link_id`, `term_id`, `weight`) VALUES
@@ -1763,7 +1835,7 @@ INSERT INTO `j_finder_links_terms4` (`link_id`, `term_id`, `weight`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_finder_links_terms5`
+-- Table structure for table `j_finder_links_terms5`
 --
 
 CREATE TABLE IF NOT EXISTS `j_finder_links_terms5` (
@@ -1775,10 +1847,15 @@ CREATE TABLE IF NOT EXISTS `j_finder_links_terms5` (
   KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `j_finder_links_terms5`
+--
+
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_finder_links_terms6`
+-- Table structure for table `j_finder_links_terms6`
 --
 
 CREATE TABLE IF NOT EXISTS `j_finder_links_terms6` (
@@ -1791,7 +1868,7 @@ CREATE TABLE IF NOT EXISTS `j_finder_links_terms6` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `j_finder_links_terms6`
+-- Dumping data for table `j_finder_links_terms6`
 --
 
 INSERT INTO `j_finder_links_terms6` (`link_id`, `term_id`, `weight`) VALUES
@@ -1886,7 +1963,7 @@ INSERT INTO `j_finder_links_terms6` (`link_id`, `term_id`, `weight`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_finder_links_terms7`
+-- Table structure for table `j_finder_links_terms7`
 --
 
 CREATE TABLE IF NOT EXISTS `j_finder_links_terms7` (
@@ -1899,7 +1976,7 @@ CREATE TABLE IF NOT EXISTS `j_finder_links_terms7` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `j_finder_links_terms7`
+-- Dumping data for table `j_finder_links_terms7`
 --
 
 INSERT INTO `j_finder_links_terms7` (`link_id`, `term_id`, `weight`) VALUES
@@ -2015,7 +2092,7 @@ INSERT INTO `j_finder_links_terms7` (`link_id`, `term_id`, `weight`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_finder_links_terms8`
+-- Table structure for table `j_finder_links_terms8`
 --
 
 CREATE TABLE IF NOT EXISTS `j_finder_links_terms8` (
@@ -2028,7 +2105,7 @@ CREATE TABLE IF NOT EXISTS `j_finder_links_terms8` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `j_finder_links_terms8`
+-- Dumping data for table `j_finder_links_terms8`
 --
 
 INSERT INTO `j_finder_links_terms8` (`link_id`, `term_id`, `weight`) VALUES
@@ -2629,7 +2706,7 @@ INSERT INTO `j_finder_links_terms8` (`link_id`, `term_id`, `weight`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_finder_links_terms9`
+-- Table structure for table `j_finder_links_terms9`
 --
 
 CREATE TABLE IF NOT EXISTS `j_finder_links_terms9` (
@@ -2642,7 +2719,7 @@ CREATE TABLE IF NOT EXISTS `j_finder_links_terms9` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `j_finder_links_terms9`
+-- Dumping data for table `j_finder_links_terms9`
 --
 
 INSERT INTO `j_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
@@ -2697,7 +2774,7 @@ INSERT INTO `j_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_finder_links_termsa`
+-- Table structure for table `j_finder_links_termsa`
 --
 
 CREATE TABLE IF NOT EXISTS `j_finder_links_termsa` (
@@ -2710,7 +2787,7 @@ CREATE TABLE IF NOT EXISTS `j_finder_links_termsa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `j_finder_links_termsa`
+-- Dumping data for table `j_finder_links_termsa`
 --
 
 INSERT INTO `j_finder_links_termsa` (`link_id`, `term_id`, `weight`) VALUES
@@ -2748,7 +2825,7 @@ INSERT INTO `j_finder_links_termsa` (`link_id`, `term_id`, `weight`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_finder_links_termsb`
+-- Table structure for table `j_finder_links_termsb`
 --
 
 CREATE TABLE IF NOT EXISTS `j_finder_links_termsb` (
@@ -2761,7 +2838,7 @@ CREATE TABLE IF NOT EXISTS `j_finder_links_termsb` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `j_finder_links_termsb`
+-- Dumping data for table `j_finder_links_termsb`
 --
 
 INSERT INTO `j_finder_links_termsb` (`link_id`, `term_id`, `weight`) VALUES
@@ -2803,7 +2880,7 @@ INSERT INTO `j_finder_links_termsb` (`link_id`, `term_id`, `weight`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_finder_links_termsc`
+-- Table structure for table `j_finder_links_termsc`
 --
 
 CREATE TABLE IF NOT EXISTS `j_finder_links_termsc` (
@@ -2816,7 +2893,7 @@ CREATE TABLE IF NOT EXISTS `j_finder_links_termsc` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `j_finder_links_termsc`
+-- Dumping data for table `j_finder_links_termsc`
 --
 
 INSERT INTO `j_finder_links_termsc` (`link_id`, `term_id`, `weight`) VALUES
@@ -2926,7 +3003,7 @@ INSERT INTO `j_finder_links_termsc` (`link_id`, `term_id`, `weight`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_finder_links_termsd`
+-- Table structure for table `j_finder_links_termsd`
 --
 
 CREATE TABLE IF NOT EXISTS `j_finder_links_termsd` (
@@ -2939,7 +3016,7 @@ CREATE TABLE IF NOT EXISTS `j_finder_links_termsd` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `j_finder_links_termsd`
+-- Dumping data for table `j_finder_links_termsd`
 --
 
 INSERT INTO `j_finder_links_termsd` (`link_id`, `term_id`, `weight`) VALUES
@@ -2993,7 +3070,7 @@ INSERT INTO `j_finder_links_termsd` (`link_id`, `term_id`, `weight`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_finder_links_termse`
+-- Table structure for table `j_finder_links_termse`
 --
 
 CREATE TABLE IF NOT EXISTS `j_finder_links_termse` (
@@ -3006,7 +3083,7 @@ CREATE TABLE IF NOT EXISTS `j_finder_links_termse` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `j_finder_links_termse`
+-- Dumping data for table `j_finder_links_termse`
 --
 
 INSERT INTO `j_finder_links_termse` (`link_id`, `term_id`, `weight`) VALUES
@@ -3283,7 +3360,7 @@ INSERT INTO `j_finder_links_termse` (`link_id`, `term_id`, `weight`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_finder_links_termsf`
+-- Table structure for table `j_finder_links_termsf`
 --
 
 CREATE TABLE IF NOT EXISTS `j_finder_links_termsf` (
@@ -3296,7 +3373,7 @@ CREATE TABLE IF NOT EXISTS `j_finder_links_termsf` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `j_finder_links_termsf`
+-- Dumping data for table `j_finder_links_termsf`
 --
 
 INSERT INTO `j_finder_links_termsf` (`link_id`, `term_id`, `weight`) VALUES
@@ -3307,7 +3384,7 @@ INSERT INTO `j_finder_links_termsf` (`link_id`, `term_id`, `weight`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_finder_taxonomy`
+-- Table structure for table `j_finder_taxonomy`
 --
 
 CREATE TABLE IF NOT EXISTS `j_finder_taxonomy` (
@@ -3326,7 +3403,7 @@ CREATE TABLE IF NOT EXISTS `j_finder_taxonomy` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
 --
--- Volcado de datos para la tabla `j_finder_taxonomy`
+-- Dumping data for table `j_finder_taxonomy`
 --
 
 INSERT INTO `j_finder_taxonomy` (`id`, `parent_id`, `title`, `state`, `access`, `ordering`) VALUES
@@ -3349,7 +3426,7 @@ INSERT INTO `j_finder_taxonomy` (`id`, `parent_id`, `title`, `state`, `access`, 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_finder_taxonomy_map`
+-- Table structure for table `j_finder_taxonomy_map`
 --
 
 CREATE TABLE IF NOT EXISTS `j_finder_taxonomy_map` (
@@ -3361,7 +3438,7 @@ CREATE TABLE IF NOT EXISTS `j_finder_taxonomy_map` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `j_finder_taxonomy_map`
+-- Dumping data for table `j_finder_taxonomy_map`
 --
 
 INSERT INTO `j_finder_taxonomy_map` (`link_id`, `node_id`) VALUES
@@ -3439,7 +3516,7 @@ INSERT INTO `j_finder_taxonomy_map` (`link_id`, `node_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_finder_terms`
+-- Table structure for table `j_finder_terms`
 --
 
 CREATE TABLE IF NOT EXISTS `j_finder_terms` (
@@ -3460,7 +3537,7 @@ CREATE TABLE IF NOT EXISTS `j_finder_terms` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2143 ;
 
 --
--- Volcado de datos para la tabla `j_finder_terms`
+-- Dumping data for table `j_finder_terms`
 --
 
 INSERT INTO `j_finder_terms` (`term_id`, `term`, `stem`, `common`, `phrase`, `weight`, `soundex`, `links`, `language`) VALUES
@@ -4929,7 +5006,7 @@ INSERT INTO `j_finder_terms` (`term_id`, `term`, `stem`, `common`, `phrase`, `we
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_finder_terms_common`
+-- Table structure for table `j_finder_terms_common`
 --
 
 CREATE TABLE IF NOT EXISTS `j_finder_terms_common` (
@@ -4940,7 +5017,7 @@ CREATE TABLE IF NOT EXISTS `j_finder_terms_common` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `j_finder_terms_common`
+-- Dumping data for table `j_finder_terms_common`
 --
 
 INSERT INTO `j_finder_terms_common` (`term`, `language`) VALUES
@@ -5063,7 +5140,7 @@ INSERT INTO `j_finder_terms_common` (`term`, `language`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_finder_tokens`
+-- Table structure for table `j_finder_tokens`
 --
 
 CREATE TABLE IF NOT EXISTS `j_finder_tokens` (
@@ -5078,10 +5155,15 @@ CREATE TABLE IF NOT EXISTS `j_finder_tokens` (
   KEY `idx_context` (`context`)
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `j_finder_tokens`
+--
+
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_finder_tokens_aggregate`
+-- Table structure for table `j_finder_tokens_aggregate`
 --
 
 CREATE TABLE IF NOT EXISTS `j_finder_tokens_aggregate` (
@@ -5100,10 +5182,15 @@ CREATE TABLE IF NOT EXISTS `j_finder_tokens_aggregate` (
   KEY `keyword_id` (`term_id`)
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `j_finder_tokens_aggregate`
+--
+
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_finder_types`
+-- Table structure for table `j_finder_types`
 --
 
 CREATE TABLE IF NOT EXISTS `j_finder_types` (
@@ -5115,7 +5202,7 @@ CREATE TABLE IF NOT EXISTS `j_finder_types` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
--- Volcado de datos para la tabla `j_finder_types`
+-- Dumping data for table `j_finder_types`
 --
 
 INSERT INTO `j_finder_types` (`id`, `title`, `mime`) VALUES
@@ -5128,7 +5215,7 @@ INSERT INTO `j_finder_types` (`id`, `title`, `mime`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_languages`
+-- Table structure for table `j_languages`
 --
 
 CREATE TABLE IF NOT EXISTS `j_languages` (
@@ -5154,7 +5241,7 @@ CREATE TABLE IF NOT EXISTS `j_languages` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- Volcado de datos para la tabla `j_languages`
+-- Dumping data for table `j_languages`
 --
 
 INSERT INTO `j_languages` (`lang_id`, `lang_code`, `title`, `title_native`, `sef`, `image`, `description`, `metakey`, `metadesc`, `sitename`, `published`, `access`, `ordering`) VALUES
@@ -5164,7 +5251,7 @@ INSERT INTO `j_languages` (`lang_id`, `lang_code`, `title`, `title_native`, `sef
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_menu`
+-- Table structure for table `j_menu`
 --
 
 CREATE TABLE IF NOT EXISTS `j_menu` (
@@ -5200,14 +5287,14 @@ CREATE TABLE IF NOT EXISTS `j_menu` (
   KEY `idx_alias` (`alias`),
   KEY `idx_path` (`path`(255)),
   KEY `idx_language` (`language`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=134 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=135 ;
 
 --
--- Volcado de datos para la tabla `j_menu`
+-- Dumping data for table `j_menu`
 --
 
 INSERT INTO `j_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `link`, `type`, `published`, `parent_id`, `level`, `component_id`, `checked_out`, `checked_out_time`, `browserNav`, `access`, `img`, `template_style_id`, `params`, `lft`, `rgt`, `home`, `language`, `client_id`) VALUES
-(1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, 0, '0000-00-00 00:00:00', 0, 0, '', 0, '', 0, 105, 0, '*', 0),
+(1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, 0, '0000-00-00 00:00:00', 0, 0, '', 0, '', 0, 107, 0, '*', 0),
 (2, 'menu', 'com_banners', 'Banners', '', 'Banners', 'index.php?option=com_banners', 'component', 0, 1, 1, 4, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 1, 10, 0, '*', 1),
 (3, 'menu', 'com_banners', 'Banners', '', 'Banners/Banners', 'index.php?option=com_banners', 'component', 0, 2, 2, 4, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 2, 3, 0, '*', 1),
 (4, 'menu', 'com_banners_categories', 'Categorías', '', 'Banners/Categorías', 'index.php?option=com_categories&extension=com_banners', 'component', 0, 2, 2, 6, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners-cat', 0, '', 4, 5, 0, '*', 1),
@@ -5259,12 +5346,13 @@ INSERT INTO `j_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `link`
 (130, 'main', 'JTOOLBAR_OPTIONS', 'jtoolbar-options', '', 'attach-attachments/jtoolbar-options', 'index.php?option=com_attachments&task=params.edit', 'component', 0, 128, 2, 10013, 0, '0000-00-00 00:00:00', 0, 1, 'class:config', 0, '', 96, 97, 0, '', 1),
 (131, 'user', 'Contactos', '2013-06-16-22-03-02', '', '2013-06-16-22-03-02', 'index.php?Itemid=', 'alias', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"aliasoptions":"124","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 99, 100, 0, '*', 0),
 (132, 'mainmenu', 'Documentación técnica', 'documentacion-tecnica', '', 'informacion-institucional/documentacion-tecnica', 'index.php?option=com_content&view=category&layout=blog&id=9', 'component', 1, 102, 2, 22, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"layout_type":"blog","show_category_title":"","show_description":"","show_description_image":"","maxLevel":"","show_empty_categories":"","show_no_articles":"","show_subcat_desc":"","show_cat_num_articles":"","page_subheading":"","num_leading_articles":"","num_intro_articles":"","num_columns":"","num_links":"","multi_column_order":"","show_subcategory_content":"","orderby_pri":"","orderby_sec":"","order_date":"","show_pagination":"","show_pagination_results":"","show_title":"","link_titles":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_readmore":"","show_readmore_title":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","show_feed_link":"","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 18, 19, 0, '*', 0),
-(133, 'botonera-de-portada', 'Documentación Técnica', '2013-07-25-23-04-15', '', '2013-07-25-23-04-15', 'index.php?Itemid=', 'alias', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"aliasoptions":"132","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 101, 102, 0, '*', 0);
+(133, 'botonera-de-portada', 'Documentación Técnica', 'documentacion', '', 'documentacion', 'index.php?Itemid=', 'alias', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"aliasoptions":"132","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 101, 102, 0, '*', 0),
+(134, 'botonera-de-portada', 'Trabajar con Nosotros', 'trabajar-con-nosotros', '', 'trabajar-con-nosotros', 'index.php?option=com_chronoforms&view=form', 'component', 1, 1, 1, 10001, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"formname":"trabajo","event":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 105, 106, 0, '*', 0);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_menu_types`
+-- Table structure for table `j_menu_types`
 --
 
 CREATE TABLE IF NOT EXISTS `j_menu_types` (
@@ -5277,7 +5365,7 @@ CREATE TABLE IF NOT EXISTS `j_menu_types` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
--- Volcado de datos para la tabla `j_menu_types`
+-- Dumping data for table `j_menu_types`
 --
 
 INSERT INTO `j_menu_types` (`id`, `menutype`, `title`, `description`) VALUES
@@ -5290,7 +5378,7 @@ INSERT INTO `j_menu_types` (`id`, `menutype`, `title`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_messages`
+-- Table structure for table `j_messages`
 --
 
 CREATE TABLE IF NOT EXISTS `j_messages` (
@@ -5307,10 +5395,15 @@ CREATE TABLE IF NOT EXISTS `j_messages` (
   KEY `useridto_state` (`user_id_to`,`state`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Dumping data for table `j_messages`
+--
+
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_messages_cfg`
+-- Table structure for table `j_messages_cfg`
 --
 
 CREATE TABLE IF NOT EXISTS `j_messages_cfg` (
@@ -5320,10 +5413,15 @@ CREATE TABLE IF NOT EXISTS `j_messages_cfg` (
   UNIQUE KEY `idx_user_var_name` (`user_id`,`cfg_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `j_messages_cfg`
+--
+
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_modules`
+-- Table structure for table `j_modules`
 --
 
 CREATE TABLE IF NOT EXISTS `j_modules` (
@@ -5351,7 +5449,7 @@ CREATE TABLE IF NOT EXISTS `j_modules` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=105 ;
 
 --
--- Volcado de datos para la tabla `j_modules`
+-- Dumping data for table `j_modules`
 --
 
 INSERT INTO `j_modules` (`id`, `title`, `note`, `content`, `ordering`, `position`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `published`, `module`, `access`, `showtitle`, `params`, `client_id`, `language`) VALUES
@@ -5389,7 +5487,7 @@ INSERT INTO `j_modules` (`id`, `title`, `note`, `content`, `ordering`, `position
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_modules_menu`
+-- Table structure for table `j_modules_menu`
 --
 
 CREATE TABLE IF NOT EXISTS `j_modules_menu` (
@@ -5399,7 +5497,7 @@ CREATE TABLE IF NOT EXISTS `j_modules_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `j_modules_menu`
+-- Dumping data for table `j_modules_menu`
 --
 
 INSERT INTO `j_modules_menu` (`moduleid`, `menuid`) VALUES
@@ -5451,7 +5549,7 @@ INSERT INTO `j_modules_menu` (`moduleid`, `menuid`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_newsfeeds`
+-- Table structure for table `j_newsfeeds`
 --
 
 CREATE TABLE IF NOT EXISTS `j_newsfeeds` (
@@ -5495,10 +5593,15 @@ CREATE TABLE IF NOT EXISTS `j_newsfeeds` (
   KEY `idx_xreference` (`xreference`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Dumping data for table `j_newsfeeds`
+--
+
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_overrider`
+-- Table structure for table `j_overrider`
 --
 
 CREATE TABLE IF NOT EXISTS `j_overrider` (
@@ -5509,10 +5612,15 @@ CREATE TABLE IF NOT EXISTS `j_overrider` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Dumping data for table `j_overrider`
+--
+
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_redirect_links`
+-- Table structure for table `j_redirect_links`
 --
 
 CREATE TABLE IF NOT EXISTS `j_redirect_links` (
@@ -5531,7 +5639,7 @@ CREATE TABLE IF NOT EXISTS `j_redirect_links` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 --
--- Volcado de datos para la tabla `j_redirect_links`
+-- Dumping data for table `j_redirect_links`
 --
 
 INSERT INTO `j_redirect_links` (`id`, `old_url`, `new_url`, `referer`, `comment`, `hits`, `published`, `created_date`, `modified_date`) VALUES
@@ -5553,7 +5661,7 @@ INSERT INTO `j_redirect_links` (`id`, `old_url`, `new_url`, `referer`, `comment`
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_schemas`
+-- Table structure for table `j_schemas`
 --
 
 CREATE TABLE IF NOT EXISTS `j_schemas` (
@@ -5563,7 +5671,7 @@ CREATE TABLE IF NOT EXISTS `j_schemas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `j_schemas`
+-- Dumping data for table `j_schemas`
 --
 
 INSERT INTO `j_schemas` (`extension_id`, `version_id`) VALUES
@@ -5573,7 +5681,7 @@ INSERT INTO `j_schemas` (`extension_id`, `version_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_session`
+-- Table structure for table `j_session`
 --
 
 CREATE TABLE IF NOT EXISTS `j_session` (
@@ -5590,18 +5698,14 @@ CREATE TABLE IF NOT EXISTS `j_session` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `j_session`
+-- Dumping data for table `j_session`
 --
 
-INSERT INTO `j_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`) VALUES
-('121b5bde0d3cdf00a431dc32577308c9', 0, 1, '1375850569', '__default|a:8:{s:15:"session.counter";i:1;s:19:"session.timer.start";i:1375850568;s:18:"session.timer.last";i:1375850568;s:17:"session.timer.now";i:1375850568;s:22:"session.client.browser";s:72:"Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)";s:8:"registry";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":24:{s:9:"\\0\\0\\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:1:{i:0;s:1:"9";}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:10:"\\0\\0\\0_params";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:9;}s:14:"\\0\\0\\0_authLevels";a:3:{i:0;i:1;i:1;i:1;i:2;i:5;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;}s:16:"com_mailto.links";a:1:{s:40:"ee5df933c23feeab7de5400954ed01b5470e8561";O:8:"stdClass":2:{s:4:"link";s:77:"http://www.endeweb.com.ar/public/informacion-institucional/mision-y-funciones";s:6:"expiry";i:1375850569;}}}', 0, ''),
-('902829329b4eb6ceba0d8af33454cd50', 0, 1, '1375881119', '__default|a:8:{s:15:"session.counter";i:1;s:19:"session.timer.start";i:1375881118;s:18:"session.timer.last";i:1375881118;s:17:"session.timer.now";i:1375881118;s:24:"session.client.forwarded";s:22:"16.9.65.107, 127.0.0.1";s:22:"session.client.browser";s:108:"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.95 Safari/537.36";s:8:"registry";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":24:{s:9:"\\0\\0\\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:1:{i:0;s:1:"9";}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:10:"\\0\\0\\0_params";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:9;}s:14:"\\0\\0\\0_authLevels";a:3:{i:0;i:1;i:1;i:1;i:2;i:5;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;}}', 0, ''),
-('9677701ac9db6d5809c0889ff0f2a45d', 0, 1, '1375797939', '__default|a:8:{s:15:"session.counter";i:1;s:19:"session.timer.start";i:1375797939;s:18:"session.timer.last";i:1375797939;s:17:"session.timer.now";i:1375797939;s:22:"session.client.browser";s:72:"Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)";s:8:"registry";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":24:{s:9:"\\0\\0\\0isRoot";N;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:1:{i:0;s:1:"9";}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:10:"\\0\\0\\0_params";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";N;s:14:"\\0\\0\\0_authLevels";a:3:{i:0;i:1;i:1;i:1;i:2;i:5;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;}s:13:"session.token";s:32:"5a8a89bdf2b5f83a3d18a74d32d9b283";}', 0, '');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_template_styles`
+-- Table structure for table `j_template_styles`
 --
 
 CREATE TABLE IF NOT EXISTS `j_template_styles` (
@@ -5617,7 +5721,7 @@ CREATE TABLE IF NOT EXISTS `j_template_styles` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
--- Volcado de datos para la tabla `j_template_styles`
+-- Dumping data for table `j_template_styles`
 --
 
 INSERT INTO `j_template_styles` (`id`, `template`, `client_id`, `home`, `title`, `params`) VALUES
@@ -5630,7 +5734,7 @@ INSERT INTO `j_template_styles` (`id`, `template`, `client_id`, `home`, `title`,
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_updates`
+-- Table structure for table `j_updates`
 --
 
 CREATE TABLE IF NOT EXISTS `j_updates` (
@@ -5648,10 +5752,10 @@ CREATE TABLE IF NOT EXISTS `j_updates` (
   `detailsurl` text NOT NULL,
   `infourl` text NOT NULL,
   PRIMARY KEY (`update_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Available Updates' AUTO_INCREMENT=105 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Available Updates' AUTO_INCREMENT=171 ;
 
 --
--- Volcado de datos para la tabla `j_updates`
+-- Dumping data for table `j_updates`
 --
 
 INSERT INTO `j_updates` (`update_id`, `update_site_id`, `extension_id`, `name`, `description`, `element`, `type`, `folder`, `client_id`, `version`, `data`, `detailsurl`, `infourl`) VALUES
@@ -5758,12 +5862,78 @@ INSERT INTO `j_updates` (`update_id`, `update_site_id`, `extension_id`, `name`, 
 (101, 3, 0, 'Spanish', '', 'pkg_es-ES', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/es-ES_details.xml', ''),
 (102, 3, 0, 'Serbian Cyrillic', '', 'pkg_sr-RS', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/sr-RS_details.xml', ''),
 (103, 3, 0, 'Bahasa Indonesia', '', 'pkg_id-ID', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/id-ID_details.xml', ''),
-(104, 3, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/sw-KE_details.xml', '');
+(104, 3, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/sw-KE_details.xml', ''),
+(105, 1, 0, 'Joomla', '', 'joomla', 'file', '', 0, '3.1.5', '', 'http://update.joomla.org/core/sts/extension_sts.xml', ''),
+(106, 3, 0, 'Flemish', '', 'pkg_nl-BE', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/nl-BE_details.xml', ''),
+(107, 3, 0, 'Chinese Traditional', '', 'pkg_zh-TW', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/zh-TW_details.xml', ''),
+(108, 3, 0, 'French', '', 'pkg_fr-FR', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/fr-FR_details.xml', ''),
+(109, 3, 0, 'German', '', 'pkg_de-DE', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/de-DE_details.xml', ''),
+(110, 3, 0, 'Hungarian', '', 'pkg_hu-HU', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/hu-HU_details.xml', ''),
+(111, 3, 0, 'Afrikaans', '', 'pkg_af-ZA', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/af-ZA_details.xml', ''),
+(112, 3, 0, 'Arabic Unitag', '', 'pkg_ar-AA', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/ar-AA_details.xml', ''),
+(113, 3, 0, 'Catalan', '', 'pkg_ca-ES', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/ca-ES_details.xml', ''),
+(114, 3, 0, 'Czech', '', 'pkg_cs-CZ', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/cs-CZ_details.xml', ''),
+(115, 3, 0, 'Danish', '', 'pkg_da-DK', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/da-DK_details.xml', ''),
+(116, 3, 0, 'Dutch', '', 'pkg_nl-NL', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/nl-NL_details.xml', ''),
+(117, 3, 0, 'Italian', '', 'pkg_it-IT', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/it-IT_details.xml', ''),
+(118, 3, 0, 'Japanese', '', 'pkg_ja-JP', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/ja-JP_details.xml', ''),
+(119, 3, 0, 'Latvian', '', 'pkg_lv-LV', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/lv-LV_details.xml', ''),
+(120, 3, 0, 'Macedonian', '', 'pkg_mk-MK', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/mk-MK_details.xml', ''),
+(121, 3, 0, 'Persian', '', 'pkg_fa-IR', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/fa-IR_details.xml', ''),
+(122, 3, 0, 'Polish', '', 'pkg_pl-PL', 'package', '', 0, '3.1.4.2', '', 'http://update.joomla.org/language/details3/pl-PL_details.xml', ''),
+(123, 3, 0, 'Russian', '', 'pkg_ru-RU', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/ru-RU_details.xml', ''),
+(124, 3, 0, 'Slovak', '', 'pkg_sk-SK', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/sk-SK_details.xml', ''),
+(125, 3, 0, 'Swedish', '', 'pkg_sv-SE', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/sv-SE_details.xml', ''),
+(126, 3, 0, 'Syriac', '', 'pkg_sy-IQ', 'package', '', 0, '3.1.2.1', '', 'http://update.joomla.org/language/details3/sy-IQ_details.xml', ''),
+(127, 3, 0, 'Tamil', '', 'pkg_ta-IN', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/ta-IN_details.xml', ''),
+(128, 3, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '3.1.4.2', '', 'http://update.joomla.org/language/details3/th-TH_details.xml', ''),
+(129, 3, 0, 'Turkish', '', 'pkg_tr-TR', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/tr-TR_details.xml', ''),
+(130, 3, 0, 'Ukrainian', '', 'pkg_uk-UA', 'package', '', 0, '3.1.4.4', '', 'http://update.joomla.org/language/details3/uk-UA_details.xml', ''),
+(131, 3, 0, 'Uyghur', '', 'pkg_ug-CN', 'package', '', 0, '3.1.1.1', '', 'http://update.joomla.org/language/details3/ug-CN_details.xml', ''),
+(132, 3, 0, 'Serbian Latin', '', 'pkg_sr-YU', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/sr-YU_details.xml', ''),
+(133, 3, 0, 'Spanish', '', 'pkg_es-ES', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/es-ES_details.xml', ''),
+(134, 3, 0, 'Serbian Cyrillic', '', 'pkg_sr-RS', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/sr-RS_details.xml', ''),
+(135, 3, 0, 'Bahasa Indonesia', '', 'pkg_id-ID', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/id-ID_details.xml', ''),
+(136, 3, 0, 'Finnish', '', 'pkg_fi-FI', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/fi-FI_details.xml', ''),
+(137, 3, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/sw-KE_details.xml', ''),
+(138, 1, 0, 'Joomla', '', 'joomla', 'file', '', 0, '3.1.5', '', 'http://update.joomla.org/core/sts/extension_sts.xml', ''),
+(139, 3, 0, 'Flemish', '', 'pkg_nl-BE', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/nl-BE_details.xml', ''),
+(140, 3, 0, 'Chinese Traditional', '', 'pkg_zh-TW', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/zh-TW_details.xml', ''),
+(141, 3, 0, 'French', '', 'pkg_fr-FR', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/fr-FR_details.xml', ''),
+(142, 3, 0, 'German', '', 'pkg_de-DE', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/de-DE_details.xml', ''),
+(143, 3, 0, 'Hungarian', '', 'pkg_hu-HU', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/hu-HU_details.xml', ''),
+(144, 3, 0, 'Afrikaans', '', 'pkg_af-ZA', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/af-ZA_details.xml', ''),
+(145, 3, 0, 'Arabic Unitag', '', 'pkg_ar-AA', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/ar-AA_details.xml', ''),
+(146, 3, 0, 'Catalan', '', 'pkg_ca-ES', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/ca-ES_details.xml', ''),
+(147, 3, 0, 'Czech', '', 'pkg_cs-CZ', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/cs-CZ_details.xml', ''),
+(148, 3, 0, 'Danish', '', 'pkg_da-DK', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/da-DK_details.xml', ''),
+(149, 3, 0, 'Dutch', '', 'pkg_nl-NL', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/nl-NL_details.xml', ''),
+(150, 3, 0, 'Italian', '', 'pkg_it-IT', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/it-IT_details.xml', ''),
+(151, 3, 0, 'Japanese', '', 'pkg_ja-JP', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/ja-JP_details.xml', ''),
+(152, 3, 0, 'Latvian', '', 'pkg_lv-LV', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/lv-LV_details.xml', ''),
+(153, 3, 0, 'Macedonian', '', 'pkg_mk-MK', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/mk-MK_details.xml', ''),
+(154, 3, 0, 'Persian', '', 'pkg_fa-IR', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/fa-IR_details.xml', ''),
+(155, 3, 0, 'Polish', '', 'pkg_pl-PL', 'package', '', 0, '3.1.4.2', '', 'http://update.joomla.org/language/details3/pl-PL_details.xml', ''),
+(156, 3, 0, 'Russian', '', 'pkg_ru-RU', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/ru-RU_details.xml', ''),
+(157, 3, 0, 'Slovak', '', 'pkg_sk-SK', 'package', '', 0, '3.1.5.2', '', 'http://update.joomla.org/language/details3/sk-SK_details.xml', ''),
+(158, 3, 0, 'Swedish', '', 'pkg_sv-SE', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/sv-SE_details.xml', ''),
+(159, 3, 0, 'Syriac', '', 'pkg_sy-IQ', 'package', '', 0, '3.1.2.1', '', 'http://update.joomla.org/language/details3/sy-IQ_details.xml', ''),
+(160, 3, 0, 'Tamil', '', 'pkg_ta-IN', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/ta-IN_details.xml', ''),
+(161, 3, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '3.1.4.2', '', 'http://update.joomla.org/language/details3/th-TH_details.xml', ''),
+(162, 3, 0, 'Turkish', '', 'pkg_tr-TR', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/tr-TR_details.xml', ''),
+(163, 3, 0, 'Ukrainian', '', 'pkg_uk-UA', 'package', '', 0, '3.1.4.4', '', 'http://update.joomla.org/language/details3/uk-UA_details.xml', ''),
+(164, 3, 0, 'Uyghur', '', 'pkg_ug-CN', 'package', '', 0, '3.1.1.1', '', 'http://update.joomla.org/language/details3/ug-CN_details.xml', ''),
+(165, 3, 0, 'Serbian Latin', '', 'pkg_sr-YU', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/sr-YU_details.xml', ''),
+(166, 3, 0, 'Spanish', '', 'pkg_es-ES', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/es-ES_details.xml', ''),
+(167, 3, 0, 'Serbian Cyrillic', '', 'pkg_sr-RS', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/sr-RS_details.xml', ''),
+(168, 3, 0, 'Bahasa Indonesia', '', 'pkg_id-ID', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/id-ID_details.xml', ''),
+(169, 3, 0, 'Finnish', '', 'pkg_fi-FI', 'package', '', 0, '3.1.4.1', '', 'http://update.joomla.org/language/details3/fi-FI_details.xml', ''),
+(170, 3, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/sw-KE_details.xml', '');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_update_sites`
+-- Table structure for table `j_update_sites`
 --
 
 CREATE TABLE IF NOT EXISTS `j_update_sites` (
@@ -5777,20 +5947,20 @@ CREATE TABLE IF NOT EXISTS `j_update_sites` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Update Sites' AUTO_INCREMENT=6 ;
 
 --
--- Volcado de datos para la tabla `j_update_sites`
+-- Dumping data for table `j_update_sites`
 --
 
 INSERT INTO `j_update_sites` (`update_site_id`, `name`, `type`, `location`, `enabled`, `last_check_timestamp`) VALUES
-(1, 'Joomla Core', 'collection', 'http://update.joomla.org/core/list.xml', 1, 1374879544),
-(2, 'Directorio de Extensiones Joomla', 'collection', 'http://update.joomla.org/jed/list.xml', 1, 1374879544),
-(3, 'Accredited Joomla! Translations', 'collection', 'http://update.joomla.org/language/translationlist_3.xml', 1, 1374879544),
-(4, 'Attachments Updates', 'extension', 'http://jmcameron.net/attachments/updates/updates.xml', 1, 1374879546),
-(5, 'Attachments Spanish (es-ES) Language Pack Updates', 'extension', 'http://jmcameron.net/attachments/updates/translations/Spanish-es-ES/updates.xml', 1, 1374879546);
+(1, 'Joomla Core', 'collection', 'http://update.joomla.org/core/list.xml', 1, 1376173679),
+(2, 'Directorio de Extensiones Joomla', 'collection', 'http://update.joomla.org/jed/list.xml', 1, 1376173679),
+(3, 'Accredited Joomla! Translations', 'collection', 'http://update.joomla.org/language/translationlist_3.xml', 1, 1376173679),
+(4, 'Attachments Updates', 'extension', 'http://jmcameron.net/attachments/updates/updates.xml', 1, 1376173681),
+(5, 'Attachments Spanish (es-ES) Language Pack Updates', 'extension', 'http://jmcameron.net/attachments/updates/translations/Spanish-es-ES/updates.xml', 1, 1376173679);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_update_sites_extensions`
+-- Table structure for table `j_update_sites_extensions`
 --
 
 CREATE TABLE IF NOT EXISTS `j_update_sites_extensions` (
@@ -5800,7 +5970,7 @@ CREATE TABLE IF NOT EXISTS `j_update_sites_extensions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Links extensions to update sites';
 
 --
--- Volcado de datos para la tabla `j_update_sites_extensions`
+-- Dumping data for table `j_update_sites_extensions`
 --
 
 INSERT INTO `j_update_sites_extensions` (`update_site_id`, `extension_id`) VALUES
@@ -5813,7 +5983,7 @@ INSERT INTO `j_update_sites_extensions` (`update_site_id`, `extension_id`) VALUE
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_usergroups`
+-- Table structure for table `j_usergroups`
 --
 
 CREATE TABLE IF NOT EXISTS `j_usergroups` (
@@ -5830,7 +6000,7 @@ CREATE TABLE IF NOT EXISTS `j_usergroups` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
--- Volcado de datos para la tabla `j_usergroups`
+-- Dumping data for table `j_usergroups`
 --
 
 INSERT INTO `j_usergroups` (`id`, `parent_id`, `lft`, `rgt`, `title`) VALUES
@@ -5847,7 +6017,7 @@ INSERT INTO `j_usergroups` (`id`, `parent_id`, `lft`, `rgt`, `title`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_users`
+-- Table structure for table `j_users`
 --
 
 CREATE TABLE IF NOT EXISTS `j_users` (
@@ -5872,16 +6042,16 @@ CREATE TABLE IF NOT EXISTS `j_users` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=573 ;
 
 --
--- Volcado de datos para la tabla `j_users`
+-- Dumping data for table `j_users`
 --
 
 INSERT INTO `j_users` (`id`, `name`, `username`, `email`, `password`, `block`, `sendEmail`, `registerDate`, `lastvisitDate`, `activation`, `params`, `lastResetTime`, `resetCount`) VALUES
-(572, 'Super Usuario', 'admi', 'pablo.se.estevez@gmail.com', '2a89bc9f748abf77c8b35850551b67cf:a8r7u2ZNxlCtyFnV8csFnWZTihASSaWv', 0, 1, '2013-06-11 01:42:38', '2013-07-27 14:03:18', '0', '', '0000-00-00 00:00:00', 0);
+(572, 'Super Usuario', 'admi', 'pablo.se.estevez@gmail.com', '2a89bc9f748abf77c8b35850551b67cf:a8r7u2ZNxlCtyFnV8csFnWZTihASSaWv', 0, 1, '2013-06-11 01:42:38', '2013-08-10 22:27:58', '0', '', '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_user_notes`
+-- Table structure for table `j_user_notes`
 --
 
 CREATE TABLE IF NOT EXISTS `j_user_notes` (
@@ -5905,10 +6075,15 @@ CREATE TABLE IF NOT EXISTS `j_user_notes` (
   KEY `idx_category_id` (`catid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Dumping data for table `j_user_notes`
+--
+
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_user_profiles`
+-- Table structure for table `j_user_profiles`
 --
 
 CREATE TABLE IF NOT EXISTS `j_user_profiles` (
@@ -5919,10 +6094,15 @@ CREATE TABLE IF NOT EXISTS `j_user_profiles` (
   UNIQUE KEY `idx_user_id_profile_key` (`user_id`,`profile_key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Simple user profile storage table';
 
+--
+-- Dumping data for table `j_user_profiles`
+--
+
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_user_usergroup_map`
+-- Table structure for table `j_user_usergroup_map`
 --
 
 CREATE TABLE IF NOT EXISTS `j_user_usergroup_map` (
@@ -5932,7 +6112,7 @@ CREATE TABLE IF NOT EXISTS `j_user_usergroup_map` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `j_user_usergroup_map`
+-- Dumping data for table `j_user_usergroup_map`
 --
 
 INSERT INTO `j_user_usergroup_map` (`user_id`, `group_id`) VALUES
@@ -5941,7 +6121,7 @@ INSERT INTO `j_user_usergroup_map` (`user_id`, `group_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_viewlevels`
+-- Table structure for table `j_viewlevels`
 --
 
 CREATE TABLE IF NOT EXISTS `j_viewlevels` (
@@ -5954,7 +6134,7 @@ CREATE TABLE IF NOT EXISTS `j_viewlevels` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
--- Volcado de datos para la tabla `j_viewlevels`
+-- Dumping data for table `j_viewlevels`
 --
 
 INSERT INTO `j_viewlevels` (`id`, `title`, `ordering`, `rules`) VALUES
@@ -5966,7 +6146,7 @@ INSERT INTO `j_viewlevels` (`id`, `title`, `ordering`, `rules`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j_weblinks`
+-- Table structure for table `j_weblinks`
 --
 
 CREATE TABLE IF NOT EXISTS `j_weblinks` (
@@ -6008,8 +6188,8 @@ CREATE TABLE IF NOT EXISTS `j_weblinks` (
   KEY `idx_language` (`language`),
   KEY `idx_xreference` (`xreference`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+--
+-- Dumping data for table `j_weblinks`
+--
+

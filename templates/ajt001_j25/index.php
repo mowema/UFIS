@@ -7,7 +7,8 @@ $logotype		= $this->params->get('logotype');
 $sitetitle		= $this->params->get('sitetitle');
 $sitedesc		= $this->params->get('sitedesc');
 $app			= JFactory::getApplication();
-$doc			= JFactory::getDocument();
+//$doc			= JFactory::getDocument();
+$menu                   = & JSite::getMenu();
 $templateparams	= $app->getTemplate(true)->params; 
 $this->setTitle( $this->getTitle() . ' - ' . $app->getCfg( 'sitename' ) );
 ?>
@@ -117,7 +118,7 @@ $this->setTitle( $this->getTitle() . ' - ' . $app->getCfg( 'sitename' ) );
                                 <?php //include "html/template.php"; ?>
                                 <div class="clr"></div>
 								<?php if ($this->countModules('user3')) : ?>
-                                <div id="user2" class="row-fluid">
+                                <div id="user3" class="row-fluid">
                                     <jdoc:include type="modules" name="user3" style="ajgrid" grid="<?php echo $user3_width; ?>" />
                                     <div class="clr"></div> 
                                 </div>
@@ -134,8 +135,13 @@ $this->setTitle( $this->getTitle() . ' - ' . $app->getCfg( 'sitename' ) );
                     <?php endif; ?>
                     </div>
 		<div class="clr"></div>
-					<?php if ($this->countModules('user4')) : ?>
-                    <div id="user1" class="row-fluid">
+					<?php if ($this->countModules('user4')) : 
+                                            if ($menu->getActive() == $menu->getDefault()) {
+        echo '<hr style="margin-bottom:12px" /><h3>Proyectos</h3>';
+}
+?>
+                
+                    <div id="user4" class="row-fluid">
                         <jdoc:include type="modules" name="user4" style="ajgrid" grid="<?php echo $user4_width; ?>" />
                         <div class="clr"></div> 
                     </div>
@@ -157,7 +163,9 @@ $this->setTitle( $this->getTitle() . ' - ' . $app->getCfg( 'sitename' ) );
             </div>
         <?php endif; ?>       
 <?php //$app = JFactory::getApplication(); $menu = $app->getMenu(); if ($menu->getActive() == $menu->getDefault()) { ?>        
-<div class="pie">© 2013 - UFIS </div><?php //} ?>
+<div class="pie">© 2013 - UFIS </div>
+<?php //} ?>
+
 </div></div></div>
     
 </body>
